@@ -2,16 +2,7 @@
 {% load static %}
 {%block content%}
 
-<html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="stylesheet" href="{%static 'css/mainStyles.css'%}">
     <title>{%block title%}Flourish || Positive young women voices {%endblock%}</title>
-  </head>
-  <body>
-  
 
     <section class="adoptSection">
       <div class="imgAndTxtContainer">
@@ -68,58 +59,4 @@
       </div>
     </section>
 
-   
-
-    <script>
-      function openResources() {
-        document.getElementById("myDropdown").classList.toggle("show");
-      }
-      function openWhat() {
-        document.getElementById("myDropdownWhat").classList.toggle("show");
-      }
-      function openAboutUs() {
-        document.getElementById("myDropdownAboutUs").classList.toggle("show");
-      }
-
-      window.onclick = function (event) {
-        if (!event.target.matches(".resourcesBTN")) {
-          var dropdowns = document.getElementsByClassName("dropdown-content");
-          var i;
-          for (i = 0; i < dropdowns.length; i++) {
-            var openDropdown = dropdowns[i];
-            if (openDropdown.classList.contains("show")) {
-              openDropdown.classList.remove("show");
-            }
-          }
-        }
-
-        if (!event.target.matches(".resourcesBTNWhat")) {
-          var dropdowns = document.getElementsByClassName(
-            "dropdown-contentWhat"
-          );
-          var i;
-          for (i = 0; i < dropdowns.length; i++) {
-            var openDropdown = dropdowns[i];
-            if (openDropdown.classList.contains("show")) {
-              openDropdown.classList.remove("show");
-            }
-          }
-        }
-
-        if (!event.target.matches(".resourcesBTNAboutUs")) {
-          var dropdowns = document.getElementsByClassName(
-            "dropdown-contentAboutUs"
-          );
-          var i;
-          for (i = 0; i < dropdowns.length; i++) {
-            var openDropdown = dropdowns[i];
-            if (openDropdown.classList.contains("show")) {
-              openDropdown.classList.remove("show");
-            }
-          }
-        }
-      };
-    </script>
-  </body>
-</html>
 {%endblock%}

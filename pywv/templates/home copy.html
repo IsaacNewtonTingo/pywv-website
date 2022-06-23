@@ -4,21 +4,9 @@
 
 
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  
-    <link rel="stylesheet" href="{%static 'css/mainStyles.css'%}">
+
     <title>{%block title%} Positive young women voices {%endblock%}</title>
-   
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
-
-  </head>
-
-  <body>
-
-    
+ 
     <section class="displaySection">
       <div class="leftDispCntainer">
         <h1>Positive young women voices</h1>
@@ -224,28 +212,5 @@
       </a>
       
     </section>
-  
-
-   <script>
-    $('.counter-count').each(function () {
-      $(this).prop('Counter',0).animate({
-          Counter: $(this).text()
-      }, {
-          duration: 5000,
-          easing: 'swing',
-          step: function (now) {
-              $(this).text(Math.ceil(now));
-          }
-      });
-  });
-   </script>
-
-  </body>
-
-
- 
-</html>
-
-
 
  {%endblock%}

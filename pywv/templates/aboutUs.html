@@ -1,17 +1,9 @@
 {%extends 'base.html'%} 
 {% load static %}
 {%block content%}
-<html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="stylesheet" href="{%static 'css/mainStyles.css'%}">
-    <title>{%block title%}Our why || Pywv{%endblock%}</title>
-  </head>
 
-  <body>
-   
+    <title>{%block title%}Our why || Pywv{%endblock%}</title>
+  
     <section class="personSection">
         <div class="myDiv">
           <!-- <img
@@ -40,27 +32,4 @@
 
     </section>
 
-    <script>
-      function myFunction() {
-        var dots = document.getElementById("dots");
-        var moreText = document.getElementById("more");
-        var btnText = document.getElementById("myBtn");
-      
-        if (dots.style.display === "none") {
-          dots.style.display = "inline";
-          btnText.innerHTML = "Read more"; 
-          moreText.style.display = "none";
-        } else {
-          dots.style.display = "none";
-          btnText.innerHTML = "Read less"; 
-          moreText.style.display = "inline";
-        }
-      }
-      </script>
-      
-   
-
-  </body>
-  
-</html>
 {%endblock%}

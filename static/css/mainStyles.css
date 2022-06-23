@@ -1,7 +1,7 @@
 body {
   margin: 0;
   padding: 0;
-  font-family: Georgia, "Times New Roman", Times, serif;
+  font-family: Georgia, 'Times New Roman', Times, serif;
   background-color: rgb(255, 255, 255);
   
 }
@@ -441,7 +441,6 @@ header{
 
 
 
-@import url(https://fonts.googleapis.com/css?family=Playfair+Display:400,400italic);
 
 .intro {
 	position: relative;

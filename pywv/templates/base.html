@@ -1,13 +1,15 @@
 {% load static %}
+<!DOCTYPE html>
 <html lang="en">
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <link rel="stylesheet" href="{% static 'css/mainStyles.css' % }" />
+    {%block style_base%}
+    <link rel="stylesheet" href="{% static 'css/mainStyles.css' %}" />
+    {%endblock%}
     <title>{%block title%} PYWV {%endblock%}</title>
     <link rel="icon" type="image/x-icon" href="https://i0.wp.com/positiveyoungwomenvoices.org/wp-content/uploads/2017/09/db6b4b16-3466-4d83-b0da-febb3e5b7a832.png?fit=200%2C200&ssl=1">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
-
 
     <link
       href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css"
@@ -24,6 +26,7 @@
 
     
     <header class="header " id="myHeader">
+     
       <div class="headerDiv">
         <div class="logoContainer ">
           <img
@@ -235,16 +238,104 @@
       integrity="sha384-pprn3073KE6tl6bjs2QrFaJGz5/SUsLqktiwsUTF55Jfv3qYSDhgCecCxMW52nD2"
       crossorigin="anonymous"
     ></script>
+
+
     <script>
+      //-------------Counter------------------------
+
+        $(document).ready(function(){
+          $('.counter').counterUp({
+            delay: 10,
+            time: 1200
+          });
+        });
+
+        $('.counter-count').each(function () {
+          $(this).prop('Counter',0).animate({
+              Counter: $(this).text()
+          }, {
+              duration: 50000,
+              easing: 'swing',
+              step: function (now) {
+                  $(this).text(Math.ceil(now));
+              }
+          });
+      });
+
+      //-------------------Display carousel-----------------
+  
+  {
+    class SliderClip {
+        constructor(el) {
+            this.el = el;
+            this.Slides = Array.from(this.el.querySelectorAll('li'));
+            this.Nav = Array.from(this.el.querySelectorAll('nav a'));
+            this.totalSlides = this.Slides.length;
+            this.current = 0;
+            this.autoPlay = true; //true or false
+            this.timeTrans = 5000; //transition time in milliseconds
+            this.IndexElements = [];
+
+            for(let i=0;i<this.totalSlides;i++) {
+                this.IndexElements.push(i);
+            }
+
+            this.setCurret();
+            this.initEvents();
+        }
+        setCurret() {
+            this.Slides[this.current].classList.add('current');
+            this.Nav[this.current].classList.add('current_dot');
+        }
+        initEvents() {
+            const self = this;
+
+            this.Nav.forEach((dot) => {
+                dot.addEventListener('click', (ele) => {
+                    ele.preventDefault();
+                    this.changeSlide(this.Nav.indexOf(dot));
+                })
+            })
+
+            this.el.addEventListener('mouseenter', () => self.autoPlay = false);
+            this.el.addEventListener('mouseleave', () => self.autoPlay = true);
+
+            setInterval(function() {
+                if (self.autoPlay) {
+                    self.current = self.current < self.Slides.length-1 ? self.current + 1 : 0;
+                    self.changeSlide(self.current);
+                }
+            }, this.timeTrans);
+
+        }
+        changeSlide(index) {
+
+            this.Nav.forEach((allDot) => allDot.classList.remove('current_dot'));
+
+            this.Slides.forEach((allSlides) => allSlides.classList.remove('prev', 'current'));
+
+            const getAllPrev = value => value < index;
+
+            const prevElements = this.IndexElements.filter(getAllPrev);
+
+            prevElements.forEach((indexPrevEle) => this.Slides[indexPrevEle].classList.add('prev'));
+
+            this.Slides[index].classList.add('current');
+            this.Nav[index].classList.add('current_dot');
+        }
+    }
+
+    const slider = new SliderClip(document.querySelector('.slider'));
+}
+
+
+
       //Preloader...............................
 
       var loader=document.getElementById('preloader');
       window.addEventListener('load',function(){
         loader.style.display='none';
       })
-
-
-
 
 
       //Open menu list---------------------------
@@ -426,6 +517,8 @@
 
 
 
+      //-------------------Read more our why----------------
+
       function readMore() {
         var moreText = document.getElementById("more");
         var btnText = document.getElementById("myBtn");
@@ -441,13 +534,7 @@
       }
 
 
-
-
-
-
-
-
-
+//-----------------Header name animation---------------------------
 
       var words = ['Positive', 'Young', 'Women', ' Voices'],
         part,
@@ -495,6 +582,27 @@
         $(document).ready(function () {
         wordflick();
         });
+
+
+
+
+//---------------Read more--------------------
+
+        function myFunction() {
+          var dots = document.getElementById("dots");
+          var moreText = document.getElementById("more");
+          var btnText = document.getElementById("myBtn");
+        
+          if (dots.style.display === "none") {
+            dots.style.display = "inline";
+            btnText.innerHTML = "Read more"; 
+            moreText.style.display = "none";
+          } else {
+            dots.style.display = "none";
+            btnText.innerHTML = "Read less"; 
+            moreText.style.display = "inline";
+          }
+        }
     </script>
   </body>
 </html>

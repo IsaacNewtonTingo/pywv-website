@@ -1,66 +1,43 @@
 {%extends 'base.html'%} 
-{% load static %}
+{%load static %}
 {%block content%}
 
-<html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  
-    <link rel="stylesheet" href="{%static 'css/mainStyles.css'%} " >
-    <title>{%block title%} Positive young women voices {%endblock%}</title>
-   
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <title>{%block title%}PYWV || Positive Young Women Voices{%endblock%}</title>
 
+    <section class="intro">  
+        <div class="slider">
+          <ul>
+            <li class="image1Li">
+        
+                <div class="center-y">
+                  <h3><span>PYWV</span>  <br>  Positive Young Women Voices.</h3>
+                  <!-- <a href="#">Discover</a>	 -->
+                </div>
 
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"/>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/waypoints/4.0.1/jquery.waypoints.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/Counter-Up/1.0.0/jquery.counterup.min.js"></script>
-
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/animejs/2.0.2/anime.min.js"></script>
-
-  </head>
-
-  <body>
-
-  <section class="intro">  
-      <div class="slider">
-        <ul>
-          <li class="image1Li">
-       
+            </li>
+            <li class="image2Li">
               <div class="center-y">
-                <h3><span>PYWV</span>  <br>  Positive Young Women Voices.</h3>
-                <!-- <a href="#">Discover</a>	 -->
+                <h3><span>Mentor and advocate</span>  for young women and adolescent girls.</h3>
+                <a href="#"></a>	
               </div>
+            </li>
+            <li class="image3Li">
+              <div class="center-y">
+              <h3><span>Humanizing</span>  young women and adolescent girls in all their diversities.</h3>
+              <a href="#"></a>
+              </div>
+            </li>
+          </ul>
 
-          </li>
-          <li class="image2Li">
-            <div class="center-y">
-              <h3><span>Mentor and advocate</span>  for young women and adolescent girls.</h3>
-              <a href="#"></a>	
-            </div>
-          </li>
-          <li class="image3Li">
-            <div class="center-y">
-            <h3><span>Humanizing</span>  young women and adolescent girls in all their diversities.</h3>
-            <a href="#"></a>
-            </div>
-          </li>
-        </ul>
-
-        <ul>
-          <nav>
-            <a href="#"></a>
-            <a href="#"></a>
-            <a href="#"></a>
-          </nav>
-        </ul>
-      </div>
-  </section>
-
-
+          <ul>
+            <nav>
+              <a href="#"></a>
+              <a href="#"></a>
+              <a href="#"></a>
+            </nav>
+          </ul>
+        </div>
+    </section>
 
     <section class="visionMissionLandingSection">
       <div class="visionMissionLanding">
@@ -120,8 +97,7 @@
         </div>
       </div>
     </section>
-
-  
+ 
     <h1 class="wobble achievementText">Our achievement</h1>
     <section class="numbersSection ">
       
@@ -145,7 +121,6 @@
       </div>
     </section>
 
-
     <section class="stackblocksLetterSection">
       
       <div class="letterAndTweets">
@@ -162,13 +137,11 @@
       </div>
     </section>
 
-
     <div class="feedTexts">
       <h1 class="wobble">News feed</h1>
       <h5> <a href="{% url 'allPosts' %}"> View all</a></h5>  
     </div>
   
-
     <section class="recentPostsSection">
         {% for post in object_list|slice:":3" %}
         {%if post %}
@@ -200,9 +173,6 @@
     <div class="twee tweeOnMobile">
       <a class="twitter-timeline" data-width="450" data-height="700" data-theme="dark" href="https://twitter.com/GirlsWomenPower?ref_src=twsrc%5Etfw">Tweets by GirlsWomenPower</a> <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
     </div>
-
-
-    
 
     <!-- <section class="partnersSection">
       <a href="https://ajws.org/" target="_blank">
@@ -269,99 +239,5 @@
   </div>
   </div>
     </section>
-
-   <script>
-
-    $(document).ready(function(){
-      $('.counter').counterUp({
-        delay: 10,
-        time: 1200
-      });
-    });
-
-    $('.counter-count').each(function () {
-      $(this).prop('Counter',0).animate({
-          Counter: $(this).text()
-      }, {
-          duration: 50000,
-          easing: 'swing',
-          step: function (now) {
-              $(this).text(Math.ceil(now));
-          }
-      });
-  });
-  
-  {
-    class SliderClip {
-        constructor(el) {
-            this.el = el;
-            this.Slides = Array.from(this.el.querySelectorAll('li'));
-            this.Nav = Array.from(this.el.querySelectorAll('nav a'));
-            this.totalSlides = this.Slides.length;
-            this.current = 0;
-            this.autoPlay = true; //true or false
-            this.timeTrans = 5000; //transition time in milliseconds
-            this.IndexElements = [];
-
-            for(let i=0;i<this.totalSlides;i++) {
-                this.IndexElements.push(i);
-            }
-
-            this.setCurret();
-            this.initEvents();
-        }
-        setCurret() {
-            this.Slides[this.current].classList.add('current');
-            this.Nav[this.current].classList.add('current_dot');
-        }
-        initEvents() {
-            const self = this;
-
-            this.Nav.forEach((dot) => {
-                dot.addEventListener('click', (ele) => {
-                    ele.preventDefault();
-                    this.changeSlide(this.Nav.indexOf(dot));
-                })
-            })
-
-            this.el.addEventListener('mouseenter', () => self.autoPlay = false);
-            this.el.addEventListener('mouseleave', () => self.autoPlay = true);
-
-            setInterval(function() {
-                if (self.autoPlay) {
-                    self.current = self.current < self.Slides.length-1 ? self.current + 1 : 0;
-                    self.changeSlide(self.current);
-                }
-            }, this.timeTrans);
-
-        }
-        changeSlide(index) {
-
-            this.Nav.forEach((allDot) => allDot.classList.remove('current_dot'));
-
-            this.Slides.forEach((allSlides) => allSlides.classList.remove('prev', 'current'));
-
-            const getAllPrev = value => value < index;
-
-            const prevElements = this.IndexElements.filter(getAllPrev);
-
-            prevElements.forEach((indexPrevEle) => this.Slides[indexPrevEle].classList.add('prev'));
-
-            this.Slides[index].classList.add('current');
-            this.Nav[index].classList.add('current_dot');
-        }
-    }
-
-    const slider = new SliderClip(document.querySelector('.slider'));
-}
-   </script>
-
-  </body>
-
-
- 
-</html>
-
-
 
  {%endblock%}
