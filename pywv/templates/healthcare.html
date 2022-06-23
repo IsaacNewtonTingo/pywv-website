@@ -1,0 +1,68 @@
+{%extends 'base.html'%} 
+{% load static %}
+{%block content%}
+
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  
+    <link rel="stylesheet" href="{%static 'css/mainStyles.css'%}">
+    <title>{%block title%} Access to inclusive healthcare || pywv || Positive young women voices {%endblock%}</title>
+   
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+
+  </head>
+
+  <body>
+    <section class="healthcareSection ">
+    <h1>Access To Inclusive Healthcare  </h1>
+
+      <div class="healthcareItems healthDivs">
+        <div onclick="goToMens()" class="didi">
+          <img src="{%static 'images/darkPad.png' %}"/>
+          <h3>Menstrual Health And Mentorship</h3>
+
+          <p>
+            The aim of the mentorship is nurturing a community of bold female leaders, with the voice of change both at an individual and societal level.
+            The mentorship department works closely with adolescent girls of ages...
+          </p>
+
+          <button onclick="goToMens()" class="whatBTN">View</button>
+        </div>
+
+        <div onclick="goToHIV()" class="didi">
+          <img src="{%static 'images/hiv.png' %}"/>
+          <h3>HIV Prevention And Care</h3>
+
+          <p>
+            Ending the AIDS Epidemic will depend on greater efforts to reduce new HIV Infections, prevent AIDS-related deaths, create awareness on U=U (undetectable equals untransmittable) and bridge the gap between civil societies...
+          </p>
+
+          <button onclick="goToHIV()" class="whatBTN">View</button>
+        </div>
+
+        <div onclick="goToMentalHealth()" class="didi">
+          <img
+            class="lgbtq"
+            src="../../static/images/mentalHealth.png"
+            alt=""
+          />
+          <h3>Mental Health</h3>
+
+          <p>
+            A healthy mind and body equals a wealthy person. At PYWV,  we believe when our mental health is taken care of, our physical, social, intellectual and psychological states exist in peace and harmony and by extension, so do our...
+
+
+          </p>
+
+          <button onclick="goToMentalHealth()" class="whatBTN">View</button>
+        </div>
+
+      </div>
+    </section>
+  </body>
+
+</html>
+ {%endblock%}

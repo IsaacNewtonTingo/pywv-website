@@ -1,0 +1,62 @@
+{%extends 'base.html'%} 
+{% load static %}
+{%block content%}
+
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  
+    <link rel="stylesheet" href="{%static 'css/mainStyles.css'%}">
+    <title>{%block title%} Resources || pywv || Positive young women voices {%endblock%}</title>
+   
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+
+  </head>
+
+  <body>
+    <section class="healthcareSection ">
+    <h1>Resources  </h1>
+
+    <h5>Have a read of our collections of tools and resources developed for and with adolescent girls and young women.</h5>
+
+
+      <div class="healthcareItems resourcesDiv">
+        <div onclick="goToFlourish()" class="didi">
+          <img src="{%static 'images/darkPad.png' %}"/>
+          <h3>Flourish Toolbox</h3>
+
+          <p>
+            This toolbox, FLOURISH, is a collection of programming, advocacy,
+            leadership, and mentorship resources and information that inform the
+            collective action of emerging girls and young women leaders pursuing
+            gender justice in health. It can be used to design, implement...
+          </p>
+
+          <button onclick="goToFlourish()" class="whatBTN">View</button>
+        </div>
+
+        <div onclick="goToStrategicPlan()" class="didi">
+          <img src="{%static 'images/hiv.png' %}"/>
+          <h3>PYWV 2022 - 2026 Strategic Plan</h3>
+
+          <p>
+            As Positive Young Women Voices marks five years since it was
+            formally registered, we are delighted to be sharing our vision for
+            the next five years with the world. Our 2022-2026 strategic plan
+            seeks to: Promote uptake of sexual and reproductive health services
+            for AGYW in all their diversities as...
+          </p>
+
+          <button onclick="goToStrategicPlan()" class="whatBTN">View</button>
+        </div>
+
+        
+
+      </div>
+    </section>
+  </body>
+
+</html>
+ {%endblock%}

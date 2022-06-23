@@ -1,0 +1,42 @@
+{%extends 'base.html'%} 
+{% load static %}
+{%block content%}
+
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="{%static 'css/mainStyles.css'%}">
+    <title>{%block title%}Mercy Wanjiku || Positive young women voices {%endblock%}</title>
+  </head>
+
+  <body>
+   
+    <section class="personSection">
+        <div class="myDiv">
+          <img
+            src="https://live.staticflickr.com/65535/52163822494_dd21d91e34.jpg"
+            alt="Mercy Wanjiku Positive young women"
+            class="personImg"
+          />
+
+          <div>
+            <div class="nameAndLinkedInContainer">
+              <h4>Mercy Wanjiku</h4>
+              <a href="https://www.linkedin.com/in/mercy-njaagah-737738145" target="_blank"><img class="linkedInImg" src="{% static 'images/Linkedin-logo-on-transparent-Background-PNG-.png' %}" alt="Mercy Wanjiku linkedIn pywv positive young women voices"></a>
+            </div>
+
+              <h6>HIV Department Lead</h6>
+              <hr />
+              <p>
+                Mercy Wanjiku currently sits as the Monitoring and Evaluation Officer at Positive Young Women Voices. She is tasked with assisting and providing guidance on the strategic budget plan of the organization. She helps run HIV campaigns as well as organizing PYWV events.
+              </p>
+          </div>
+        </div>
+
+    </section>
+  </body>
+  
+</html>
+{%endblock%}

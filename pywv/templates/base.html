@@ -1,0 +1,500 @@
+{% load static %}
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link rel="stylesheet" href="{% static 'css/mainStyles.css' % }" />
+    <title>{%block title%} PYWV {%endblock%}</title>
+    <link rel="icon" type="image/x-icon" href="https://i0.wp.com/positiveyoungwomenvoices.org/wp-content/uploads/2017/09/db6b4b16-3466-4d83-b0da-febb3e5b7a832.png?fit=200%2C200&ssl=1">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+
+
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor"
+      crossorigin="anonymous"
+    />
+
+    <script src="https://kit.fontawesome.com/c8e139d437.js" crossorigin="anonymous"></script>
+  </head>
+
+  <body>
+    <!-- <div id="preloader"></div> -->
+
+    
+    <header class="header " id="myHeader">
+      <div class="headerDiv">
+        <div class="logoContainer ">
+          <img
+            class="logo  "
+            src="../../static/images/pywvlogo.webp"
+            alt="Positive young women voices"
+          />
+
+          <div class="word"></div>
+        </div>
+  
+        <nav>
+          <ul>
+            <li><a href="{%url 'home'%}"> Home</a></li>
+  
+            <li class="resourcesBTNAboutUs" onclick="openAboutUs()">About us</li>
+            <div id="myDropdownAboutUs" class="dropdown-contentAboutUs">
+              <a href="{%url 'aboutUs'%}">Our why</a> <br />
+              <hr />
+              <a href="{%url 'theTeam'%}">The team</a>
+            </div>
+  
+            <li class="resourcesBTNWhat" onclick="openWhat()">Our work</li>
+
+            <div id="myDropdownWhat" class="dropdown-contentWhat">
+              
+              <a href="{%url 'Healthcare'%}"
+                >Access to Inclusive Healthcare</a
+              >
+              <br />
+              <hr />
+              
+              <a href="{%url 'Rights'%}"
+                >Rights and Advocacy</a
+              >
+              <hr />
+              
+              <a href="{%url 'Empowerment'%}">Socio-Economic Empowerment </a>
+
+              <hr />
+              
+              <a href="{%url 'Scholarships'%}">Scholarships </a>
+            </div>
+            
+            <li><a href="{%url 'contactUs'%}"> Contact us</a></li>
+  
+            <li><a href="{%url 'resources'%}">Resources</a> </li>
+            
+          </ul>
+        </nav>
+        
+        <div class="socials">
+            <button class="donateBTN"> <a style="font-size:12px ;color:white ;" href="{%url 'Donate'%}" >Donate</a> </button>
+            <a href="https://www.instagram.com/pywv2017/" target="_blank">
+              <img
+                src="{%static 'images/Instagram-logo-free-download-PNG.png' %}"
+                alt="instagram logo "
+            /></a>
+            <a href="https://twitter.com/GirlsWomenPower" target="_blank">
+              <img
+                src="{%static 'images/Logo-Twitter-icon-transparent-PNG.png' %}"
+                alt="twitter logo"
+            /></a>
+            <a
+              href="https://www.facebook.com/adolescentgirlsandyoungwomenvoices/"
+              target="_blank"
+            >
+              <img
+                src="{%static 'images/Popular-facebook-Logo-png.png' %}"
+                alt="facebook logo"
+            /></a>
+        </div>
+      
+      </div>
+
+      <div class="headerDivMobile">
+        <div class="logoContainer">
+          <img
+            class="logo"
+            src="https://i0.wp.com/positiveyoungwomenvoices.org/wp-content/uploads/2017/09/db6b4b16-3466-4d83-b0da-febb3e5b7a832.png?fit=200%2C200&ssl=1"
+            alt="Positive young women voices"
+          />
+         
+          <i style="font-size:36px" onclick="toggleMenu()" class="fa-solid fa-bars"></i>
+        </div>
+  
+        <div id="openListMobile" class="openListMobile">
+          <nav>
+            <ul>
+              <li><a href="{%url 'home'%}"> Home</a></li>
+    
+              <li class="nav-item dropdown">
+                <a class="nav-link dropdown-toggle" href="#" id="navbarLightDropdownMenuLink" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                  About us
+                </a>
+                <ul class="dropdown-menu dropdown-menu-light" aria-labelledby="navbarLightDropdownMenuLink">
+                  <li><a class="dropdown-item" href="{%url 'aboutUs'%}">Our why</a></li>
+                  <li><a class="dropdown-item" href="{%url 'theTeam'%}">The team</a></li>
+                </ul>
+              </li>
+    
+              <li class="nav-item dropdown">
+                <a class="nav-link dropdown-toggle" href="#" id="navbarDarkDropdownMenuLink" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                  Our work
+                </a>
+                <ul class="dropdown-menu dropdown-menu-light" aria-labelledby="navbarDarkDropdownMenuLink">
+                  <li><a href="{%url 'Healthcare'%}"
+                    >Access to Inclusive Healthcare</a></li>
+                  <li><a href="{%url 'Rights'%}"
+                    >Rights and Advocacy</a
+                    ></li>
+                  <li><a href="{%url 'Empowerment'%}">Socio-Economic Empowerment </a></li>
+                  <li><a href="{%url 'Scholarships'%}">Scholarships </a></li>
+                </ul>
+              </li>
+              
+              <li><a href="{%url 'contactUs'%}"> Contact us</a></li>
+    
+              <li><a href="{%url 'resources'%}">Resources</a> </li>
+
+            </ul>
+          </nav>
+    
+          <button class="donateBTN"> <a style="font-size:12px ;color:white ;" href="{%url 'Donate'%}">Donate</a> </button>
+    
+         
+        </div>
+        
+      </div>
+    </header>
+
+    
+    <div >
+      {%block content%}
+      {%endblock%}
+    </div>
+
+    <footer>
+      <div class="footerDiv" > 
+        <div>
+          <iframe src="https://positiveyoungwomenvoices.substack.com/embed" width="480" height="320" style="border:1px solid #EEE; background:white;" frameborder="0" scrolling="no"></iframe>
+        </div>
+
+        <div>
+          <h2>Contact us</h2>
+          <h6><a href="tel:+254719858515">+254705973115</a></h6>
+          <h6><a href="mailto:info@pywv.org" target="_blank">info@pywv.org</a></h6>
+  
+          <h6>
+            <a href="https://pywv.org/"
+             target="_blank" >pywv.org</a
+            >
+          </h6> <br><br>
+
+          <a href="https://www.instagram.com/pywv2017/" target="_blank">
+            <img
+              src="{%static 'images/Instagram-logo-free-download-PNG.png' %}"
+              alt="instagram logo "
+          /></a>
+          <a href="https://twitter.com/GirlsWomenPower" target="_blank">
+            <img
+              src="{%static 'images/Logo-Twitter-icon-transparent-PNG.png' %}"
+              alt="twitter logo"
+          /></a>
+          <a
+            href="https://www.facebook.com/adolescentgirlsandyoungwomenvoices/"
+            target="_blank"
+          >
+            <img
+              src="{%static 'images/Popular-facebook-Logo-png.png' %}"
+              alt="facebook logo"
+          /></a> <br><br>
+
+          <button class="donateBTNFooter"><a  href="{%url 'Donate'%}">Donate</a> </button> <br><br>
+        </div>
+ 
+        <div>
+          <h2>Quick links</h2>
+          <h6><a href="{%url 'home'%}">Home</a></h6>
+          <h6><a href="{%url 'aboutUs'%}">Our why</a></h6>
+          <h6><a href="{%url 'Healthcare'%}">Access to inclusive healthcare</a></h6>
+          <h6><a href="{%url 'Rights'%}">Rights and advocacy</a></h6>
+          <h6><a href="{%url 'Empowerment'%}">Socio-economic empowerment</a></h6>
+          <h6><a href="{%url 'Scholarships'%}">Scholarships</a></h6>
+          <h6><a href="{%url 'flourish'%}">Flourish toolbox</a></h6>
+          <h6><a href="{%url 'pywv2022_2026StrategicPlan'%}">PYWV 2022-2026 strategic plan</a></h6>
+          <h6><a href="{%url 'contactUs'%}">Contact us</a></h6>
+        </div>
+
+      </div>
+
+      <div class="bottomMost">
+        <hr class="footeLine" >
+  
+        <h6 class="designedBy" >
+          Designed and developed by
+          <a href="https://ape30tech.herokuapp.com/" target="_blank"
+            >Ape 30 technologies</a
+          >
+        </h6>
+  
+        <hr class="footeLine" >
+      </div>
+
+    </footer>
+
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-pprn3073KE6tl6bjs2QrFaJGz5/SUsLqktiwsUTF55Jfv3qYSDhgCecCxMW52nD2"
+      crossorigin="anonymous"
+    ></script>
+    <script>
+      //Preloader...............................
+
+      var loader=document.getElementById('preloader');
+      window.addEventListener('load',function(){
+        loader.style.display='none';
+      })
+
+
+
+
+
+      //Open menu list---------------------------
+
+      function toggleMenu(){
+      var menuItems= document.getElementById('openListMobile')
+       if (menuItems.style.display=='flex')
+          menuItems.style.display='none'
+        else{
+          menuItems.style.display='flex'
+        }
+      }
+
+      //Navigation-------------------------------
+      function goToMens() {
+        window.location.href = "{%url 'menstruation-health-and-mentorship-pywv'%}";
+      }
+      
+      function goToDonate() {
+        window.location.replace = "https://www.changa.co.ke/fundraiser/14948";
+      }
+      function goToHIV() {
+        window.location.href = "{%url 'HIV-prevention-and-care-pywv'%}";
+      }
+
+      function goToMentalHealth() {
+        window.location.href = "{%url 'mental-health-pywv'%}";
+      }
+
+      function goToViolence() {
+        window.location.href = "{%url 'prevention-and-ending-violence-against-women-and-girls'%}";
+      }
+
+      function goToGenderRights() {
+        window.location.href = "{%url 'gender-rights-promotion'%}";
+      }
+
+      function goToWeLead() {
+        window.location.href = "{%url 'we-lead-project-pywv'%}";
+      }
+
+      function goToCommunityEngagement() {
+        window.location.href = "{%url 'community-engagement'%}";
+      }
+
+      function goToActivities() {
+        window.location.href = "{%url 'aboutUs'%}";
+      }
+
+      function goToFlourish() {
+        window.location.href = "{%url 'flourish'%}";
+      }
+
+      function goToStrategicPlan() {
+        window.location.href = "{%url 'pywv2022_2026StrategicPlan'%}";
+      }
+
+      function goToDigitalMedia() {
+        window.location.href = "{%url 'digital-media-advocacy'%}";
+      }
+
+     
+     
+      //Dropdown menu............................
+
+      function openResources() {
+        document.getElementById("myDropdown").classList.toggle("show");
+      }
+      function openWhat() {
+        document.getElementById("myDropdownWhat").classList.toggle("show");
+      }
+      function openAboutUs() {
+        document.getElementById("myDropdownAboutUs").classList.toggle("show");
+      }
+
+      window.onclick = function (event) {
+        if (!event.target.matches(".resourcesBTN")) {
+          var dropdowns = document.getElementsByClassName("dropdown-content");
+          var i;
+          for (i = 0; i < dropdowns.length; i++) {
+            var openDropdown = dropdowns[i];
+            if (openDropdown.classList.contains("show")) {
+              openDropdown.classList.remove("show");
+            }
+          }
+        }
+
+        if (!event.target.matches(".resourcesBTNWhat")) {
+          var dropdowns = document.getElementsByClassName(
+            "dropdown-contentWhat"
+          );
+          var i;
+          for (i = 0; i < dropdowns.length; i++) {
+            var openDropdown = dropdowns[i];
+            if (openDropdown.classList.contains("show")) {
+              openDropdown.classList.remove("show");
+            }
+          }
+        }
+
+        if (!event.target.matches(".resourcesBTNAboutUs")) {
+          var dropdowns = document.getElementsByClassName(
+            "dropdown-contentAboutUs"
+          );
+          var i;
+          for (i = 0; i < dropdowns.length; i++) {
+            var openDropdown = dropdowns[i];
+            if (openDropdown.classList.contains("show")) {
+              openDropdown.classList.remove("show");
+            }
+          }
+        }
+      };
+
+      //Wobble effect on text...............................
+
+      // Create array of any elements with "wobble" class
+      const all = document.querySelectorAll(".wobble");
+
+      // Iterate through each "wobble"
+      all.forEach((el) => {
+        // Get the text content of the element
+        let text = el.textContent;
+        // Create an array of separate letters
+        text = text.split("");
+        // Iterate through each letter and give it its own span element and individual animation delay offset
+        const textCode = text.map((x, idx) => {
+          let delay = (idx + 1) * 50;
+          return `<span style="animation-delay: ${delay}ms">${x}</span>`;
+        });
+        // replace the element's html with our dynamically created html
+        el.innerHTML = textCode.join(" ");
+      });
+
+      //scroll effects................................
+
+      const scrollElements = document.querySelectorAll(".js-scroll");
+
+      const elementInView = (el, dividend = 1) => {
+        const elementTop = el.getBoundingClientRect().top;
+
+        return (
+          elementTop <=
+          (window.innerHeight || document.documentElement.clientHeight) /
+            dividend
+        );
+      };
+
+      const elementOutofView = (el) => {
+        const elementTop = el.getBoundingClientRect().top;
+
+        return (
+          elementTop >
+          (window.innerHeight || document.documentElement.clientHeight)
+        );
+      };
+
+      const displayScrollElement = (element) => {
+        element.classList.add("scrolled");
+      };
+
+      const hideScrollElement = (element) => {
+        element.classList.remove("scrolled");
+      };
+
+      const handleScrollAnimation = () => {
+        scrollElements.forEach((el) => {
+          if (elementInView(el, 1.25)) {
+            displayScrollElement(el);
+          } else if (elementOutofView(el)) {
+            hideScrollElement(el);
+          }
+        });
+      };
+
+      window.addEventListener("scroll", () => {
+        handleScrollAnimation();
+      });
+
+
+
+      function readMore() {
+        var moreText = document.getElementById("more");
+        var btnText = document.getElementById("myBtn");
+      
+        if (btnText.style.display === "none") {
+         
+          btnText.style.display= "none"; 
+          moreText.style.display = "inline";
+        } else {
+          btnText.style.display= "inline"; 
+          moreText.style.display = "none";
+        }
+      }
+
+
+
+
+
+
+
+
+
+
+      var words = ['Positive', 'Young', 'Women', ' Voices'],
+        part,
+        i = 0,
+        offset = 0,
+        len = words.length,
+        forwards = true,
+        skip_count = 0,
+        skip_delay = 1,
+        speed = 200;
+        var wordflick = function () {
+        setInterval(function () {
+          if (forwards) {
+            if (offset >= words[i].length) {
+              ++skip_count;
+              if (skip_count == skip_delay) {
+                forwards = false;
+                skip_count = 0;
+              }
+            }
+          }
+          else {
+            if (offset == 0) {
+              forwards = true;
+              i++;
+              offset = 0;
+              if (i >= len) {
+                i = 0;
+              }
+            }
+          }
+          part = words[i].substr(0, offset);
+          if (skip_count == 0) {
+            if (forwards) {
+              offset++;
+            }
+            else {
+              offset--;
+            }
+          }
+          $('.word').text(part);
+        },speed);
+        };
+
+        $(document).ready(function () {
+        wordflick();
+        });
+    </script>
+  </body>
+</html>

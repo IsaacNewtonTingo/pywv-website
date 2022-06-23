@@ -1,0 +1,121 @@
+{% extends 'base.html' %} 
+{%load static%}
+{% block content%}
+ <!DOCTYPE html>
+ <html lang="en">
+ <head>
+   <meta charset="UTF-8">
+   <meta http-equiv="X-UA-Compatible" content="IE=edge">
+   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <link rel="stylesheet" href="{%static 'css/mainStyles.css'%}">
+    <title>{%block title%} {{post.title_tag}} {%endblock%}</title>
+ </head>
+ <body>
+
+  <section class="aticleDetailSection">
+      <h1 class="postDetailTitle">{{post.title}}</h1>
+      <br>
+      <small >By:{{post.author.first_name}} {{post.author.last_name}} <span style="color:gray ;"> {{post.date_created}} </span>  </small>
+
+      {%if user.is_authenticated%}
+        {%if user.id == post.author.id%}
+        
+        - <a href="{% url 'update_post' post.pk %}">Edit</a> - <a href="{% url 'delete_post' post.pk %}">Delete</a>
+        <br />
+        {%endif%}
+        {%endif%}
+
+  <br/>
+  <br>
+
+  {%if post.header_image%}
+  <img style="width:100% ;" src="{{post.header_image.url}}" alt="">
+  {%endif%}
+<br><br>
+ <p> {{post.body|safe}}</p>
+
+
+  <hr>
+
+  <!-- <div class="card mb-3" style="max-width: 540px;">
+      <div class="row g-0">
+        <div class="col-md-4">
+          {%if post.author.profile.profile_pic%}
+          <img src=" {{post.author.profile.profile_pic.url}}" class="img-fluid rounded-start" alt="...">
+          {%else%}
+          <img src=" {%static 'theblog/images/prof.jpg' %}" class="img-fluid rounded-start" alt="...">
+          {%endif%} 
+
+        </div>
+        <div class="col-md-8">
+          <div class="card-body">
+            <h5 class="card-title">{{post.author.first_name}} {{post.author.last_name}} </h5>
+            <p class="card-text"><small class="text-muted">
+            
+              {%if post.author.profile.facebook_url %}
+                  <a href="{{post.author.profile.facebook_url}}">Facebook | </a> 
+              {%endif%} 
+
+              {%if post.author.profile.instagram_url %}
+              <a href="{{post.author.profile.instagram_url}}">Instagram | </a>  
+              {%endif%} 
+
+              {%if post.author.profile.twitter_url %}
+              <a href="{{post.author.profile.twitter_url}}">Twitter  </a> 
+              {%endif%}
+              
+              
+              </small>
+          </p>
+            <p class="card-text">{{post.author.profile.bio}}</p>
+            
+          </div>
+        </div>
+      </div>
+    </div> -->
+
+
+  <br>
+  <br>
+  <br>
+
+  <div class="commentsContainer">
+    <h2>Comments :</h2>
+  
+  
+    {%if not post.comments.all%}
+    
+    <a href="{%url 'add_comment' post.pk%}">Add comment</a> <br><br>
+  
+    {%else%}
+  
+    <a href="{%url 'add_comment' post.pk%}">Add comment</a> <br><br>
+  
+  
+    {%for comment in post.comments.all%}
+  
+    <div class="commentMiniContainer">
+      <strong>
+        {{comment.name}}
+      </strong> <br>
+      <small style="color: gray;">
+        {{comment.date_added}}
+      </small> 
+  
+      <br>
+      <br>
+      <p>{{comment.body}}</p> 
+    </div>
+  
+    {%endfor%}
+  
+    {%endif%} 
+  </div>
+
+  </section>
+
+ </body>
+ 
+ </html>
+
+{% endblock %}

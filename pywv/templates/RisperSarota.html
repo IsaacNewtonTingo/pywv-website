@@ -1,0 +1,42 @@
+{%extends 'base.html'%} 
+{% load static %}
+{%block content%}
+
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="{%static 'css/mainStyles.css'%}">
+    <title>{%block title%}Risper Sarota || Positive young women voices {%endblock%}</title>
+  </head>
+
+  <body>
+   
+    <section class="personSection">
+        <div class="myDiv">
+          <img
+            src="https://live.staticflickr.com/65535/52163583478_f35a29cce1_c.jpg"
+            alt="Risper Sarota Positive young women"
+            class="personImg"
+          />
+
+          <div>
+            <div class="nameAndLinkedInContainer">
+              <h4>Risper Sarota</h4>
+              <a href="https://www.linkedin.com/in/risper-sarota-614967162" target="_blank"><img class="linkedInImg" src="{% static 'images/Linkedin-logo-on-transparent-Background-PNG-.png' %}" alt="Risper Sarota linkedIn pywv positive young women voices"></a>
+            </div>
+
+              <h6>PEVAWG Lead</h6>
+              <hr />
+              <p>
+                Risper Sarota holds a Diploma in Clinical Medicine and Surgery. She is a full-time volunteer Clinical Officer at PYWV 2019. She is an avid believer in Humanity. She passionately engages and works towards implementing activities that target youth empowerment, social justice, and gender equality. She is passionate about the welfare of girl-child, menstrual hygiene, and mental health. She envisions a world that is free and safe for every child to be able to live up to their God-given potential. Her idea of feminism is self-determination. Knowing who you are in this world and feeling good about it.
+              </p>
+          </div>
+        </div>
+
+    </section>
+  </body>
+  
+</html>
+{%endblock%}

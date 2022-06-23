@@ -1,0 +1,111 @@
+{%extends 'base.html'%} 
+{% load static %}
+{%block content%}
+
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="{%static 'css/mainStyles.css'%}">
+    <title>{%block title%}LBQ support || Positive young women voices {%endblock%}</title>
+  </head>
+  <body>
+   
+
+    <section class="adoptSection">
+      <div class="imgAndTxtContainer">
+        <!-- <img
+          src="https://i0.wp.com/positiveyoungwomenvoices.org/wp-content/uploads/2021/02/AAGM-1-scaled.jpg?resize=1536%2C1024&ssl=1"
+          alt="adopt a girls month positive young women voices"
+        /> -->
+
+        <div>
+          <h2>LBQ Support Forums</h2>
+          <p>
+            PYWV LBQ Support forum comprises of Lesbians, Bisexuals and Queer
+            persons living with and affected by HIV from our community Dandora.
+            The support forum came into existence because of the challenges the
+            LBQ Womxn are facing such as:
+            
+            <ul>
+              <li> Sexual Violence</li>
+              <li>Disownment</li>
+              <li>Stigma and
+            discrimination based on Sexual Orientations and Expressions</li>
+            </ul>
+           
+             
+             This has
+            led to significant health and social-economic negative outcomes on
+            this group and this saw the beginning of this safe space created. It
+            started on a WhatsApp group and still has weekly conversations on
+            the group on key issues that are important to LBQ womxn. The monthly
+            support forums have enabled:
+            
+            <ul>
+              <li>The dissemination of LBQ tailored
+              Sexual and reproductive health(SRH) Information to its members.</li>
+              <li>Creation of linkages with services providing organizations that
+              offer SRH services to our members.</li>
+              <li> Creation of a safe space for LBQ
+              womxn to meet monthly.</li>
+              <li>Ensure security and protection of the human
+              rights of Lesbian, Bisexual and Queer (LBQ) women.</li>
+            </ul>      
+          </p>
+        </div>
+      </div>
+    </section>
+
+
+    <script>
+      function openResources() {
+        document.getElementById("myDropdown").classList.toggle("show");
+      }
+      function openWhat() {
+        document.getElementById("myDropdownWhat").classList.toggle("show");
+      }
+      function openAboutUs() {
+        document.getElementById("myDropdownAboutUs").classList.toggle("show");
+      }
+      
+      window.onclick = function(event) {
+        if (!event.target.matches('.resourcesBTN')) {
+          var dropdowns = document.getElementsByClassName("dropdown-content");
+          var i;
+          for (i = 0; i < dropdowns.length; i++) {
+            var openDropdown = dropdowns[i];
+            if (openDropdown.classList.contains('show')) {
+              openDropdown.classList.remove('show');
+            }
+          }
+        }
+
+        if (!event.target.matches('.resourcesBTNWhat')) {
+          var dropdowns = document.getElementsByClassName("dropdown-contentWhat");
+          var i;
+          for (i = 0; i < dropdowns.length; i++) {
+            var openDropdown = dropdowns[i];
+            if (openDropdown.classList.contains('show')) {
+              openDropdown.classList.remove('show');
+            }
+          }
+        }
+
+        if (!event.target.matches('.resourcesBTNAboutUs')) {
+          var dropdowns = document.getElementsByClassName("dropdown-contentAboutUs");
+          var i;
+          for (i = 0; i < dropdowns.length; i++) {
+            var openDropdown = dropdowns[i];
+            if (openDropdown.classList.contains('show')) {
+              openDropdown.classList.remove('show');
+            }
+          }
+        }
+       
+      }
+    </script>
+  </body>
+</html>
+{%endblock%}

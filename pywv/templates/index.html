@@ -1,0 +1,414 @@
+{%extends 'base.html'%} 
+{% load static %}
+{%block content%}
+
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="{%static 'css/mainStyles.css'%}">
+    <title>{%block title%} Positive young women voices {%endblock%}</title>
+   
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+  </head>
+  <body>
+    
+    <section class="displaySection">
+      <div class="leftDispCntainer">
+        <h1>Positive young women voices</h1>
+        <h3>Our voices matter !</h3>
+      </div>
+      <img
+        class="displayImg"
+        
+        src="{%static 'theblog/images/disp.png' %}"
+        alt="Positive young women voices display image"
+      />
+    </section>
+
+    <section class="whoAreWeContainer">
+      <div>
+        <img src="{%static 'theblog/images/who.webp' %}" />
+      </div>
+      <div class="whoDiv">
+        <h1 class="wobble">Who are we?</h1>
+
+        <p>
+          <span> Positive Young Women Voices (PYWV)</span> is a community based
+          organization which started as a self-help group in the year 2014 but
+          later registered as a community based organization in the year 2017.
+          The idea of group formation was derived when these advocates noticed
+          there were major challenges facing young women and girls living with
+          and at risk of HIV within the Nairobi slums of Dandora.The major
+          challenges include teenage pregnancy, poverty, gender based violence,
+          access to friendly health facility and information.Armed with
+          experience they chose to fill the gaps by offering mentorship, provide
+          linkages and referrals, create awareness and offer information.
+        </p>
+
+        <a href="./aboutUs.html">Read more</a>
+      </div>
+    </section>
+
+    <section class="whatWeDoContainer scroll-element js-scroll slide-left">
+      <div class="items">
+        <div onclick="goToAdopt()" class="didi">
+          <img src="{%static 'theblog/images/adopt.png' %}"/>
+          <h3>Adopt a girl month initiative</h3>
+
+          <p>
+            JJ had her first period when she was 14 years old and had just
+            joined high school. She had been waiting for this and knew that it
+            would happen as almost all girls in her last class in primary school
+            had fuller chest and carried their sanitary towels when it was that
+            time of the month.
+          </p>
+
+          <button onclick="goToAdopt()" class="whatBTN">View</button>
+        </div>
+
+        <div onclick="goToViolence()" class="didi">
+          <img src="{%static 'theblog/images/violence.png' %}"/>
+          <h3>Ending violence against women and girls</h3>
+
+          <p>
+            Behind every woman and girl there is an untold story and in most
+            case is a sad story. Women and girls go through various challenges
+            in life; gender based violence being the most rampant. This is due
+            to the patriarchal system and cultural factors that deny women power
+            to decide on their human rights.
+          </p>
+
+          <button onclick="goToViolence()" class="whatBTN">View</button>
+        </div>
+
+        <div onclick="goToLBQ()" class="didi">
+          <img
+            class="lgbtq"
+            src="https://cdn.pixabay.com/photo/2021/02/28/00/46/pride-6056043_1280.png"
+            alt=""
+          />
+          <h3>LBQ support forums</h3>
+
+          <p>
+            PYWV LBQ Support forum comprises of Lesbians, Bisexuals and Queer
+            persons living with and affected by HIV from our community Dandora.
+          </p>
+
+          <button onclick="goToLBQ()" class="whatBTN">View</button>
+        </div>
+      </div>
+    </section>
+
+    <h1 class="wobble ourActivitiesTextAbsolute">Our activities</h1>
+    <section class="scroll-element js-scroll slide-right activitiesHomeSection">
+      <div class="actsContaToHold">
+        <div onclick="goToActivities()">
+          <img
+            src="https://media4.giphy.com/media/MAiBYSyUzSCWZne5hU/200w.webp?cid=ecf05e47kknxvy1ikb7jvu0jfew44fz9temf2e45g5vdxqy9&rid=200w.webp&ct=s"
+            alt="girl power"
+          />
+        </div>
+
+        <div>
+          <div>
+            <h4>Empowerment</h4>
+            <p>
+              The empowerment program will be building the capacities of young
+              women and girls affected and living with HIV to get the best care,
+              treatment and support and to improve their lives with the right
+              information as well as economic growth for sustainable
+              livelihoods.
+            </p>
+          </div>
+
+          <div>
+            <h4>Prevention</h4>
+            <p>
+              PYWV prevention program will major on prevention with positive
+              program where the young women who are influencers will act as
+              mentors to the younger ones through psycho social support, peer
+              education, facilitation of referrals for treatment ,screening and
+              management of other non-communicable diseases and awareness
+              creation. <br /><a href="./aboutUs.html#activities">Read more</a>
+            </p>
+          </div>
+        </div>
+      </div>
+
+      <div>
+        <a
+          class="twitter-timeline"
+          data-width="400"
+          data-height="400"
+          data-theme="light"
+          href="https://twitter.com/GirlsWomenPower?ref_src=twsrc%5Etfw"
+          >Tweets by GirlsWomenPower</a
+        >
+        <script
+          async
+          src="https://platform.twitter.com/widgets.js"
+          charset="utf-8"
+        ></script>
+      </div>
+    </section>
+
+    <section class="recentPostsSection">
+      <h1 class="wobble">News feed</h1>
+      <div class="newsCollection">
+        <div onclick="goToMens()" class="newsMiniContainer">
+          <img
+            src="https://i0.wp.com/positiveyoungwomenvoices.org/wp-content/uploads/2019/06/IMG-20180329-WA0052.jpg?w=1280&ssl=1"
+            alt=""
+          />
+
+          <div class="itCent">
+            <h4>International Menstruation Day</h4>
+
+            <div class="writerAndDate">
+              <p>Anne Mugo</p>
+              <p>March 8, 2022</p>
+            </div>
+
+            <p>
+              My mother once had told me that when she was starting periods...
+            </p>
+          </div>
+
+          <button onclick="goToMens()">Continue reading</button>
+        </div>
+
+        <div class="newsMiniContainer">
+          <img
+            src="https://i0.wp.com/positiveyoungwomenvoices.org/wp-content/uploads/2020/05/Strong-together-photo.gif?fit=555%2C332&ssl=1"
+            alt=""
+          />
+
+          <div class="itCent">
+            <h4>COVID-19: Stronger Together</h4>
+
+            <div class="writerAndDate">
+              <p>Anne Mugo</p>
+              <p>June 3rd, 2021</p>
+            </div>
+
+            <p>
+              They say you never know your strength until being strong is the
+              ...
+            </p>
+          </div>
+
+          <button>Continue reading</button>
+        </div>
+
+        <div class="newsMiniContainer">
+          <img
+            src="https://i0.wp.com/positiveyoungwomenvoices.org/wp-content/uploads/2020/07/Teen-pregnancy.jpg?w=512&ssl=1"
+            alt=""
+          />
+
+          <div class="itCent">
+            <h4>ending teenage pregnancy</h4>
+
+            <div class="writerAndDate">
+              <p>Anne Mugo</p>
+              <p>March 8, 2022</p>
+            </div>
+
+            <p>Teenage pregnancy has been a worrying trend and a national...</p>
+          </div>
+
+          <button>Continue reading</button>
+        </div>
+
+        <div class="newsMiniContainer">
+          <img
+            src="https://i0.wp.com/positiveyoungwomenvoices.org/wp-content/uploads/2020/09/World-Contraception-Day-1.jpg?w=900&ssl=1"
+            alt=""
+          />
+
+          <div class="itCent">
+            <h4>World Contraception Day</h4>
+
+            <div class="writerAndDate">
+              <p>Anne Mugo</p>
+              <p>March 8, 2022</p>
+            </div>
+
+            <p>
+              This, too, is your choice. I was 23 years old when I first
+              started...
+            </p>
+          </div>
+
+          <button>Continue reading</button>
+        </div>
+      </div>
+    </section>
+
+    
+{% for post in object_list %}
+    <ul>
+      <li>
+        <a href="{% url 'article-details' post.pk %}">
+          {{post.title}} </a
+        >
+      <a href="{%url 'category' post.category|slugify %}">{{post.category}}-</a> 
+        {{post.author.first_name}} {{post.author.last_name}}
+
+        {%if user.is_authenticated%}
+        {%if user.id == post.author.id%}
+        
+        - <a href="{% url 'update_post' post.pk %}">Edit</a> - <a href="{% url 'delete_post' post.pk %}">Delete</a>
+        <br />
+        {%endif%}
+        {%endif%}
+
+        <small>{{post.date_created}}</small><br><br>
+
+        {{post.snippet}}
+      </li>
+    </ul>
+{%endfor%}
+
+    <script>
+      //Navigation-------------------------------
+      function goToAdopt() {
+        window.location.href = "./adoptAGirlsMonth.html";
+      }
+      function goToLBQ() {
+        window.location.href = "./lbqSupport.html";
+      }
+
+      function goToViolence() {
+        window.location.href = "./endingViolence.html";
+      }
+
+      function goToActivities() {
+        window.location.href = "./aboutUs.html#activities";
+      }
+
+      function goToMens() {
+        window.location.href = "./mens.html";
+      }
+
+      //Dropdown menu............................
+
+      function openResources() {
+        document.getElementById("myDropdown").classList.toggle("show");
+      }
+      function openWhat() {
+        document.getElementById("myDropdownWhat").classList.toggle("show");
+      }
+      function openAboutUs() {
+        document.getElementById("myDropdownAboutUs").classList.toggle("show");
+      }
+
+      window.onclick = function (event) {
+        if (!event.target.matches(".resourcesBTN")) {
+          var dropdowns = document.getElementsByClassName("dropdown-content");
+          var i;
+          for (i = 0; i < dropdowns.length; i++) {
+            var openDropdown = dropdowns[i];
+            if (openDropdown.classList.contains("show")) {
+              openDropdown.classList.remove("show");
+            }
+          }
+        }
+
+        if (!event.target.matches(".resourcesBTNWhat")) {
+          var dropdowns = document.getElementsByClassName(
+            "dropdown-contentWhat"
+          );
+          var i;
+          for (i = 0; i < dropdowns.length; i++) {
+            var openDropdown = dropdowns[i];
+            if (openDropdown.classList.contains("show")) {
+              openDropdown.classList.remove("show");
+            }
+          }
+        }
+
+        if (!event.target.matches(".resourcesBTNAboutUs")) {
+          var dropdowns = document.getElementsByClassName(
+            "dropdown-contentAboutUs"
+          );
+          var i;
+          for (i = 0; i < dropdowns.length; i++) {
+            var openDropdown = dropdowns[i];
+            if (openDropdown.classList.contains("show")) {
+              openDropdown.classList.remove("show");
+            }
+          }
+        }
+      };
+
+      //Wobble effect on text...............................
+
+      // Create array of any elements with "wobble" class
+      const all = document.querySelectorAll(".wobble");
+
+      // Iterate through each "wobble"
+      all.forEach((el) => {
+        // Get the text content of the element
+        let text = el.textContent;
+        // Create an array of separate letters
+        text = text.split("");
+        // Iterate through each letter and give it its own span element and individual animation delay offset
+        const textCode = text.map((x, idx) => {
+          let delay = (idx + 1) * 50;
+          return `<span style="animation-delay: ${delay}ms">${x}</span>`;
+        });
+        // replace the element's html with our dynamically created html
+        el.innerHTML = textCode.join(" ");
+      });
+
+      //scroll effects................................
+
+      const scrollElements = document.querySelectorAll(".js-scroll");
+
+      const elementInView = (el, dividend = 1) => {
+        const elementTop = el.getBoundingClientRect().top;
+
+        return (
+          elementTop <=
+          (window.innerHeight || document.documentElement.clientHeight) /
+            dividend
+        );
+      };
+
+      const elementOutofView = (el) => {
+        const elementTop = el.getBoundingClientRect().top;
+
+        return (
+          elementTop >
+          (window.innerHeight || document.documentElement.clientHeight)
+        );
+      };
+
+      const displayScrollElement = (element) => {
+        element.classList.add("scrolled");
+      };
+
+      const hideScrollElement = (element) => {
+        element.classList.remove("scrolled");
+      };
+
+      const handleScrollAnimation = () => {
+        scrollElements.forEach((el) => {
+          if (elementInView(el, 1.25)) {
+            displayScrollElement(el);
+          } else if (elementOutofView(el)) {
+            hideScrollElement(el);
+          }
+        });
+      };
+
+      window.addEventListener("scroll", () => {
+        handleScrollAnimation();
+      });
+    </script>
+  </body>
+</html>
+{%endblock%}

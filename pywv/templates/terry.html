@@ -1,0 +1,42 @@
+{%extends 'base.html'%} 
+{% load static %}
+{%block content%}
+
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="{%static 'css/mainStyles.css'%}">
+    <title>{%block title%}Terry Nairuko || Positive young women voices {%endblock%}</title>
+  </head>
+
+  <body>
+   
+    <section class="personSection">
+        <div class="myDiv">
+          <img
+            src="https://live.staticflickr.com/65535/52163822524_5a3476a4c9_z.jpg"
+            alt="Terry Nairuko Positive young women"
+            class="personImg"
+          />
+
+          <div>
+              <h4>Terry Nairuko</h4>
+              <h6>Advisory board member</h6>
+              <hr />
+              <p>
+                Terry is passionate about Women Empowerment and SRHR Advocacy. She hopes to
+                live in a world where girls and young women have the
+                confidence to reach their full
+                potential as they have all they need in themselves and in each other. She has a Masters
+                in Project Management from University of Nairobi.
+              </p>
+          </div>
+        </div>
+
+    </section>
+  </body>
+  
+</html>
+{%endblock%}

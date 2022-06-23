@@ -1,0 +1,42 @@
+{%extends 'base.html'%} 
+{% load static %}
+{%block content%}
+
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="{%static 'css/mainStyles.css'%}">
+    <title>{%block title%}Cynthia Katanu || Positive young women voices {%endblock%}</title>
+  </head>
+
+  <body>
+   
+    <section class="personSection">
+        <div class="myDiv">
+          <img
+            src="https://live.staticflickr.com/65535/52163584093_f11c05751d.jpg"
+            alt="Cynthia Katanu Positive young women"
+            class="personImg"
+          />
+
+          <div>
+            <div class="nameAndLinkedInContainer">
+              <h4>Cynthia Katanu</h4>
+              <a href="https://www.linkedin.com/in/cynthia-katanu-2a77b8241" target="_blank"><img class="linkedInImg" src="{% static 'images/Linkedin-logo-on-transparent-Background-PNG-.png' %}" alt="Cynthia Katanu linkedIn pywv positive young women voices"></a>
+            </div>
+
+              <h6>Fianance manager</h6>
+              <hr />
+              <p>
+                Cynthia Katanu is currently the Finance Officer at Positive Young Women voices and is tasked with coordinating and providing Finance, budget, and administrative support involving the recording and interpretation of financial and budgetary information.
+              </p>
+          </div>
+        </div>
+
+    </section>
+  </body>
+  
+</html>
+{%endblock%}

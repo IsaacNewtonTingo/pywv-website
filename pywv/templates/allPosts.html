@@ -1,0 +1,47 @@
+{%extends 'base.html'%} 
+{% load static %}
+{%block content%}
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  
+    <link rel="stylesheet" href="{%static 'css/mainStyles.css'%}">
+    <title>{%block title%}All posts || Positive young women voices {%endblock%}</title>
+   
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+
+  </head>
+
+  <body>
+
+    <section class="allPostSection">
+        <h1 class="allPostsText">All posts</h1>
+        <div class="allPostsDiv">
+            {% for post in object_list %}
+            {%if post %}
+            <a class="card-link" href="{% url 'article-details' post.pk %}">
+              <div class="card">
+                {%if post.header_image%}
+                  <img style="width:340px;height:200px;" src="{{post.header_image.url}}" class="card-img-top" alt="...">
+                {%else%}
+                  <img style="width:340px;height:200px;" src="https://qawerk.com/wp-content/uploads/2021/07/no-image-available-icon-6.png" alt="">
+                {%endif%}
+    
+                <div class="card-body">
+                  <h5 class="card-title"> {{post.title|truncatechars:50}}</h5>
+                  <br>
+                  <p class="card-text"> {{post.snippet|truncatechars:120}}</p>
+                  <hr>
+                  <p class="card-text"><small class="text-muted">{{post.author.first_name}} {{post.author.last_name}} | {{post.date_created}}</small></p>
+                </div>
+              </div>
+            </a>
+            {%endif%}
+            {%endfor%}
+        </div>
+    </section>
+  </body>
+</html>
+ {%endblock%}

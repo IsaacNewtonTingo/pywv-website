@@ -1,0 +1,45 @@
+{%extends 'base.html'%} 
+{% load static %}
+{%block content%}
+
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="{%static 'css/mainStyles.css'%}">
+    <title>{%block title%}Lizz Abade || Positive young women voices || pywv {%endblock%}</title>
+  </head>
+
+  <body>
+   
+    <section class="personSection">
+        <div class="myDiv">
+          <img
+            src="https://live.staticflickr.com/65535/52162559812_06ffca2252.jpg"
+            alt="Lizz Abade Positive young women || pywv"
+            class="personImg"
+          />
+
+          <div>
+              <h4>Lizz Abade</h4>
+              <h6>Advisory board member</h6>
+              <hr />
+              <p>
+                Lizz Abade is a resourceful customer service representative committed to and driven by the need
+                to solve people’s problems.
+                She takes pride in providing exemplary service to everyone. She is a
+                graduate of International relations and is most passionate about causes that pursue sustainable
+                development in Africa; among them, gender equality. She reckons that the implications of not
+                providing girls and women with equal voices, choices and opportunities affect not just their lives
+                but the future of the planet. When she is not handling customers or pursuing development causes,
+                she enjoys expressing herself creatively through her blog at lizzabade.wordpress.com.
+              </p>
+          </div>
+        </div>
+
+    </section>
+  </body>
+  
+</html>
+{%endblock%}

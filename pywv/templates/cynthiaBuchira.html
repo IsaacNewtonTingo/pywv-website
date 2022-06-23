@@ -1,0 +1,43 @@
+{%extends 'base.html'%} 
+{% load static %}
+{%block content%}
+
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="{%static 'css/mainStyles.css'%}">
+    <title>{%block title%}Cynthia Buchira || Positive young women voices {%endblock%}</title>
+  </head>
+
+  <body>
+   
+    <section class="personSection">
+        <div class="myDiv">
+          <img
+            src="https://live.staticflickr.com/65535/52163582326_4d0130cfda_w.jpg"
+            alt="Cynthia Buchira Positive young women"
+            class="personImg"
+          />
+
+          <div>
+              <h4>Cynthia Buchira</h4>
+              <h6>Advisory board member</h6>
+              <hr />
+              <p>
+                Cynthia Buchira is a young visionary HIV prevention Ambassador and advocate, recently
+                appointed as a member of the positive young
+                women voices Advisory Group. My passion as a
+                volunteer at PYWV comes from a life long obsession to end HIV stigma and new infections and
+                also end GBV among Adolescent girls and young women. The simple act of shaping the
+                community to make something functional or beautiful brings me endless satisfaction.
+              </p>
+          </div>
+        </div>
+
+    </section>
+  </body>
+  
+</html>
+{%endblock%}

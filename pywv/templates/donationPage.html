@@ -1,0 +1,104 @@
+{%extends 'base.html'%} 
+{% load static %}
+{%block content%}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{%static 'css/mainStyles.css'%}">
+    <title>{%block title%}Donate{%endblock%}</title>
+</head>
+<body>
+   
+    <section class="donateSection">
+        <div class="donateIconAndTextContainer">
+           <i class="fa-solid fa-circle-dollar-to-slot"  ></i>
+            <h1>Donate</h1> 
+        </div>
+       
+        <div class="innerDonateContainer">
+            <!-- <img class="otherDonateImgs" src="https://res.cloudinary.com/changa/image/upload/c_scale,f_auto,q_auto,w_520/v1533895397/commonshare/M-ChangaHiRes_Rectangle.png" alt="positive young women's voices mchanga donation"> -->
+
+            <hr>
+
+            <p><strong>Timiza Ndoto Zake scholarship Fund :</strong> <a href="https://www.changa.co.ke/fundraiser/55348">Donate</a> </p>
+
+            <p><strong>Adopt a girl's month :</strong> <a href="https://www.changa.co.ke/fundraiser/14948" target="_blank">Donate</a></p>
+
+            <hr style="margin-bottom:50px ;">
+
+
+            <div class="providerHolder">
+                <div class="providerContainer">
+                    <img class="visaAndPP" src="https://i.pinimg.com/originals/54/e3/0e/54e30edf9d8e3f86b1935d5d3d1317d8.png" alt="">
+
+                
+
+                    <img class="visaAndPP" src="https://upload.wikimedia.org/wikipedia/commons/thumb/b/b5/PayPal.svg/1200px-PayPal.svg.png" alt="">
+
+                    <div class="glow paypalDiv" id="donate-button-container">
+                        <div id="donate-button"></div>
+                        <script src="https://www.paypalobjects.com/donate/sdk/donate-sdk.js" charset="UTF-8"></script>
+                        <script>
+                        PayPal.Donation.Button({
+                        env:'production',
+                        hosted_button_id:'GWHGZSTRYB7DJ',
+                        image: {
+                        src:'https://www.paypalobjects.com/en_US/i/btn/btn_donateCC_LG.gif',
+                        alt:'Donate with PayPal button',
+                        title:'PayPal - The safer, easier way to pay online!',
+                        }
+                        }).render('#donate-button');
+                        </script>
+                    </div>
+                </div>
+
+
+                <div class="providerContainer">
+                    <img class="otherDonateImgs" src="https://upload.wikimedia.org/wikipedia/commons/thumb/1/15/M-PESA_LOGO-01.svg/1200px-M-PESA_LOGO-01.svg.png" alt="">
+        
+                    <ul>
+                        <li><span>DIAL:</span> *483*57*14948#</li>
+                        <li><span>PAYBILL:</span> 891300</li>
+                        <li><span>ACCOUNT:</span> PYWV</li>
+                    </ul>
+                </div>
+    
+                <div class="providerContainer">
+                    <img class="otherDonateImgs" src="https://1000logos.net/wp-content/uploads/2018/01/Airtel-Logo.png" alt="">
+                    <ul>
+                        <li><span>Business Name:</span> MCHANGA</li>
+                        <li><span>Reference:</span> 14948</li>
+                    </ul>
+                </div>
+    
+                <div class="providerContainer">
+                    <img class="otherDonateImgs" src="https://upload.wikimedia.org/wikipedia/en/c/c8/Equitel_Kenya_Logo.png" alt="">
+                    <ul>
+                        <li><span>Business Number:</span> 891300</li>
+                        <li><span>Account Number:</span> 14948</li>
+                    </ul>
+                </div>
+    
+                <div class="providerContainer">
+                    <img class="otherDonateImgs" src="https://play-lh.googleusercontent.com/jZ_MdC06hYd-RhoBzwYjYREWUP_JrNuijMkLK7UpcD0YtVFVwbf0qQTdSedhjOVDxtM" alt="">
+                    <ul>
+                        <li><span>DIAL:</span> *160*2*1#</li>
+                        <li><span>PAYBILL:</span> 891300</li>
+                        <li><span>ACCOUNT:</span> 14948</li>
+                    </ul>
+                </div>
+
+               
+
+               
+            </div>
+        </div>
+    </section>
+</body>
+</html>
+
+{%endblock%}

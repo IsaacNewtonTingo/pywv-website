@@ -1,0 +1,45 @@
+{%extends 'base.html'%} 
+{% load static %}
+{%block content%}
+
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="{%static 'css/mainStyles.css'%}">
+    <title>{%block title%}Lydia Odipo || Positive young women voices {%endblock%}</title>
+  </head>
+
+  <body>
+   
+    <section class="personSection">
+        <div class="myDiv">
+          <img
+            src="https://live.staticflickr.com/65535/52163583006_c1415f06a4.jpg"
+            alt="Lucy Njenga Positive young women"
+            class="personImg"
+          />
+
+          <div>
+            <div class="nameAndLinkedInContainer">
+              <h4>Lydia Odipo</h4>
+              <a href="https://www.linkedin.com/in/lydia-odipo-778584240" target="_blank"><img class="linkedInImg" src="{% static 'images/Linkedin-logo-on-transparent-Background-PNG-.png' %}" alt="Lydia Odipo linkedIn pywv positive young women voices"></a>
+            </div>
+
+              <h6>Administrative Coordinator</h6>
+              <hr />
+              <p>
+                Lydia Odipo is a diploma holder from Kenya Institute of Management and currently volunteering at Positive Young Women Voices (PYWV) as the administrative coordinator. Her duties and responsibilities at PYWV are supporting regular office operations and scheduling internal and external meetings.
+              </p>
+          </div>
+        </div>
+
+    </section>
+
+   
+
+  </body>
+  
+</html>
+{%endblock%}

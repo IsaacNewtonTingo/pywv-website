@@ -1,0 +1,101 @@
+{%extends 'base.html'%} 
+{% load static %}
+{%block content%}
+
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="{%static 'css/mainStyles.css'%}">
+    <title>{%block title%}PYWV 2022-2026 strategic plan || Positive young women voices {%endblock%}</title>
+  </head>
+  <body>
+   
+
+    <section class="adoptSection">
+      <div class="imgAndTxtContainer">
+        <div>
+          <h2>PYWV 2022 – 2026 Strategic Plan</h2> <br> <hr> <br>
+
+          <p>
+            As Positive Young Women Voices marks five years since it was
+            formally registered, we are delighted to be sharing our vision for
+            the next five years with the world. Our 2022-2026 strategic plan
+            seeks to: Promote uptake of sexual and reproductive health services
+            for AGYW in all their diversities as measured by increased access to
+            quality healthcare services. Promote the rights of AGYW in all their
+            diversities through capacity building initiatives and stakeholder
+            engagement. Equip AGYW with financial and entrepreneurship knowledge
+            for improved livelihoods through investment in viable and
+            sustainable economic opportunities for self-sufficiency. Strengthen
+            PYWV’s profile and reputation to attract and sustain strategic
+            partners through effective communication and visibility. Enhance
+            PYWV’s effectiveness and efficiency to deliver on its mission
+            through strengthening the internal systems and structures. We
+            appreciate all our partners, current and to come for walking with us
+            as we bring change for our girls and young women in our diversities.
+          </p>
+
+          <h5>
+            <a target="_blank" href="{%static 'documents/plan.pdf'%}"
+              >Click here to read our strategic plan</a
+            >
+          </h5>
+        </div>
+      </div>
+    </section>
+
+    <script>
+      function openResources() {
+        document.getElementById("myDropdown").classList.toggle("show");
+      }
+      function openWhat() {
+        document.getElementById("myDropdownWhat").classList.toggle("show");
+      }
+      function openAboutUs() {
+        document.getElementById("myDropdownAboutUs").classList.toggle("show");
+      }
+
+      window.onclick = function (event) {
+        if (!event.target.matches(".resourcesBTN")) {
+          var dropdowns = document.getElementsByClassName("dropdown-content");
+          var i;
+          for (i = 0; i < dropdowns.length; i++) {
+            var openDropdown = dropdowns[i];
+            if (openDropdown.classList.contains("show")) {
+              openDropdown.classList.remove("show");
+            }
+          }
+        }
+
+        if (!event.target.matches(".resourcesBTNWhat")) {
+          var dropdowns = document.getElementsByClassName(
+            "dropdown-contentWhat"
+          );
+          var i;
+          for (i = 0; i < dropdowns.length; i++) {
+            var openDropdown = dropdowns[i];
+            if (openDropdown.classList.contains("show")) {
+              openDropdown.classList.remove("show");
+            }
+          }
+        }
+
+        if (!event.target.matches(".resourcesBTNAboutUs")) {
+          var dropdowns = document.getElementsByClassName(
+            "dropdown-contentAboutUs"
+          );
+          var i;
+          for (i = 0; i < dropdowns.length; i++) {
+            var openDropdown = dropdowns[i];
+            if (openDropdown.classList.contains("show")) {
+              openDropdown.classList.remove("show");
+            }
+          }
+        }
+      };
+    </script>
+  </body>
+</html>
+{%endblock%}

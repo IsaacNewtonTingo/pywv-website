@@ -1,0 +1,44 @@
+{%extends 'base.html'%} 
+{% load static %}
+{%block content%}
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="{%static 'css/mainStyles.css'%}">
+    <title>{%block title%}Anne Mugo || Positive young women voices {%endblock%}</title>
+  </head>
+
+  <body>
+   
+    <section class="personSection">
+        <div class="myDiv">
+          <img
+            src="https://live.staticflickr.com/65535/52163583588_738e401021_w.jpg"
+            alt="Anne Mugo Positive young women"
+            class="personImg"
+          />
+
+          <div>
+            <div class="nameAndLinkedInContainer">
+              <h4>Anne Mugo</h4>
+              <a href="https://www.linkedin.com/in/anne-mugo-659172112" target="_blank"><img class="linkedInImg" src="{% static 'images/Linkedin-logo-on-transparent-Background-PNG-.png' %}" alt="Anne Mugo linkedIn pywv positive young women voices"></a>
+            </div>
+
+              <h6>Project officer</h6>
+              <hr />
+              <p>
+                Anne is an intersectional feminist who uses her skills to lead and advocate for the rights of women and girls, driven by the belief that our freedoms are inter-connected and dependent on one another. At Positive Young Women Voices, Anne divides her time between leadership, programs, communication, engagement, and advocacy duties. She is a writer who enjoys reading and fostering new relationships.
+              </p>
+          </div>
+        </div>
+
+    </section>
+
+   
+
+  </body>
+  
+</html>
+{%endblock%}

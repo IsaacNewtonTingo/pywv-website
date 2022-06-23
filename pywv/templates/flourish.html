@@ -1,0 +1,125 @@
+{%extends 'base.html'%} 
+{% load static %}
+{%block content%}
+
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="{%static 'css/mainStyles.css'%}">
+    <title>{%block title%}Flourish || Positive young women voices {%endblock%}</title>
+  </head>
+  <body>
+  
+
+    <section class="adoptSection">
+      <div class="imgAndTxtContainer">
+        <div>
+          <h2>FLOURISH Toolbox</h2> <br> <hr> <br>
+
+          <h5>
+            A Toolbox for Girls and Young Women Leaders on the Frontlines of
+            Gender Justice in Health
+          </h5>
+          <p>
+            This toolbox, FLOURISH, is a collection of programming, advocacy,
+            leadership, and mentorship resources and information that inform the
+            collective action of emerging girls and young women leaders pursuing
+            gender justice in health. It can be used to design, implement,
+            expand, and strengthen programmes and activities of girls and young
+            women and helps enable practical, meaningful, and impactful advocacy
+            and leadership work across a wide variety of settings. FLOURISH has
+            been written and inspired by young women leaders all over the world,
+            with leadership from partners including Positive Young Women Voices
+            (PYWV), the Global Network of Young People Living with HIV (Y+
+            Global), and the Africa Youth and Adolescent Network (AfriYAN). In
+            supporting the 2030 Agenda for Sustainable Development, this toolbox
+            is part of an important effort to find innovative solutions in
+            various forms and ways of thinking towards empowering girls and
+            young women and promoting real and sustainable change. In addition
+            to helping build and support their capacities and skills, it also
+            aims to raise awareness about the need for substantial investments
+            in community-led organizations, groups, and networks of girls and
+            young women in all their diversities. All local and global
+            development partners should recognize and respond to the fact that
+            such investments are essential for real change in all aspects of
+            gender justice. At the heart of this toolbox is the belief that the
+            substantive leadership of girls and young women must be encouraged
+            at all levels if we are to achieve gender justice locally,
+            nationally, and globally. Making significant progress toward this
+            goal requires increasing and supporting their opportunities to shape
+            policies and practices related to the health and rights of
+            themselves, their peers, and communities – including by holding
+            governments, multilateral agencies, policy makers, programme
+            managers, and other decision-makers to account. This type and scope
+            of direct engagement is essential to ensure that gender equality
+            commitments are translated into sustained and meaningful change in
+            areas such as HIV prevention and treatment, human rights, and sexual
+            and reproductive health.
+          </p>
+
+          <h5>
+            <a target="_blank" href="{%static 'documents/flourish.pdf'%}"
+              >Click here to read the toolbox</a
+            >
+          </h5>
+        </div>
+      </div>
+    </section>
+
+   
+
+    <script>
+      function openResources() {
+        document.getElementById("myDropdown").classList.toggle("show");
+      }
+      function openWhat() {
+        document.getElementById("myDropdownWhat").classList.toggle("show");
+      }
+      function openAboutUs() {
+        document.getElementById("myDropdownAboutUs").classList.toggle("show");
+      }
+
+      window.onclick = function (event) {
+        if (!event.target.matches(".resourcesBTN")) {
+          var dropdowns = document.getElementsByClassName("dropdown-content");
+          var i;
+          for (i = 0; i < dropdowns.length; i++) {
+            var openDropdown = dropdowns[i];
+            if (openDropdown.classList.contains("show")) {
+              openDropdown.classList.remove("show");
+            }
+          }
+        }
+
+        if (!event.target.matches(".resourcesBTNWhat")) {
+          var dropdowns = document.getElementsByClassName(
+            "dropdown-contentWhat"
+          );
+          var i;
+          for (i = 0; i < dropdowns.length; i++) {
+            var openDropdown = dropdowns[i];
+            if (openDropdown.classList.contains("show")) {
+              openDropdown.classList.remove("show");
+            }
+          }
+        }
+
+        if (!event.target.matches(".resourcesBTNAboutUs")) {
+          var dropdowns = document.getElementsByClassName(
+            "dropdown-contentAboutUs"
+          );
+          var i;
+          for (i = 0; i < dropdowns.length; i++) {
+            var openDropdown = dropdowns[i];
+            if (openDropdown.classList.contains("show")) {
+              openDropdown.classList.remove("show");
+            }
+          }
+        }
+      };
+    </script>
+  </body>
+</html>
+{%endblock%}

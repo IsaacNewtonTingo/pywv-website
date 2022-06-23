@@ -1,0 +1,102 @@
+{%extends 'base.html'%} 
+{% load static %}
+{%block content%}
+
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  
+    <link rel="stylesheet" href="{%static 'css/mainStyles.css'%}">
+    <title>{%block title%}Rights and advocacy || pywv {%endblock%}</title>
+   
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+
+  </head>
+
+  <body>
+    <section class="healthcareSection ">
+    <h1>Rights And Advocacy</h1>
+
+      <div class="healthcareItems">
+        <div onclick="goToViolence()" class="didi">
+            <img src="{%static 'images/violence.png' %}"/>
+            <h3>Prevention and Ending Violence Against Women and Girls</h3>
+  
+            <p>
+              We live in a society where women and girls are not safe anywhere and if we are to stand in solidarity, we have to pledge to free women and girls from the shackles of violence....
+            </p>
+  
+            <button onclick="goToViolence()" class="whatBTN">View</button>
+        </div>
+
+        <div onclick="goToGenderRights()" class="didi">
+          <img src="{%static 'images/adopt.png' %}"/>
+          <h3>Gender Rights Promotion</h3>
+
+          <p>
+            The LBQ+ Forum comprises of Lesbians, Bisexuals and Queer persons living with and affected by HIV. The  forum came into existence to address the challenges the LBQ+ Womxn are facing such as sexual violence...
+          </p>
+
+          <button onclick="goToGenderRights()" class="whatBTN">View</button>
+        </div>
+
+        <div onclick="goToWeLead()" class="didi">
+          <img
+            class="lgbtq"
+            src="https://cdn.pixabay.com/photo/2021/02/28/00/46/pride-6056043_1280.png"
+            alt=""
+          />
+          <h3>We Lead Project</h3>
+
+          <p>
+            We are implementing the <a href="https://hivos.org/program/we-lead/">We Lead  program</a>  in partnership with like-minded civil society organizations working to build advocacy capacities of young women rightsholder groups; these are groups of young women whose sexual reproductive...
+
+
+          </p>
+
+          <button onclick="goToWeLead()" class="whatBTN">View</button>
+        </div>
+
+        <div onclick="goToCommunityEngagement()" class="didi">
+            <img
+              class="lgbtq"
+              src="../../static/images/pngegg.png"
+              alt=""
+            />
+            <h3>Community Engagement</h3>
+  
+            <p>
+                We hold monthly community outreaches and dialogues on violence against women and girls in their diversity. Our outreaches are an avenue for us to listen, inform and respond to the needs of community members...
+  
+  
+            </p>
+  
+            <button onclick="goToCommunityEngagement()" class="whatBTN">View</button>
+        </div>
+
+
+        <div onclick="goToDigitalMedia()" class="didi">
+          <img
+            class="lgbtq"
+            src="../../static/images/media.png"
+            alt=""
+          />
+          <h3>Digital Media Advocacy</h3>
+
+          <p>
+            We hold monthly conversations on our social media platforms aimed at creating awarenmness about Sexual and Reproductive Health issues that affect women and girls in all their diversities.
+
+
+          </p>
+
+          <button onclick="goToDigitalMedia()" class="whatBTN">View</button>
+      </div>
+
+      </div>
+    </section>
+  </body>
+
+</html>
+ {%endblock%}
