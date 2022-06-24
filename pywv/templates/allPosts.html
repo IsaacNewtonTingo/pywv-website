@@ -1,6 +1,8 @@
-{%extends 'base.html'%} 
-{% load static %}
+{%extends 'base.html'%}
+{%load static%}
 {%block content%}
+{%include 'head.html'%}
+
 
     <title>{%block title%}All posts || Positive young women voices {%endblock%}</title>
 
@@ -30,5 +32,6 @@
             {%endfor%}
         </div>
     </section>
+
 
  {%endblock%}

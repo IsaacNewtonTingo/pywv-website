@@ -1,8 +1,9 @@
 {%extends 'base.html'%} 
-{%load static %}
+{%load static%}
 {%block content%}
+{%include 'head.html'%}
 
-    <title>{%block title%}PYWV || Positive Young Women Voices{%endblock%}</title>
+<title>{%block title%} PYWV || Positive Young Women Voices {%endblock%}</title>
 
     <section class="intro">  
         <div class="slider">
@@ -41,12 +42,12 @@
 
     <section class="visionMissionLandingSection">
       <div class="visionMissionLanding">
-        <div  >
+        <div class="missLead" >
           <img class="identifierImgs " src="{% static 'images/vision.png' %}" alt="">
           <h4><span>Humanizing</span>  young women and adolescent girls in all their diversities</h4>
         </div>
   
-        <div >
+        <div class="missLead" >
           <img class="identifierImgs " src="{% static 'images/mission.png' %}" alt="">
           <h4><span>Mentor and advocate</span>  for young women and adolescent girls in all their diversities to advance their rights through access to inclusive healthcare, advocacy and social and economic empowerment</h4>
         </div>
@@ -62,38 +63,39 @@
           <div class="coreDivs">
             <img class="coreImgs" src="{% static 'images/respect.png' %}" alt="pywv positive young women voices core values">
             <h4><span>Respect</span></h4>
-            <h4> 
-              We hold each and every one within the PYWV spaces with utmost dignity and regard for who they are, their opinions, perspectives and diversities</h4>
+            <p> 
+              We hold each and every one within the PYWV spaces with utmost dignity and regard for who they are, their opinions, perspectives and diversities</p>
           </div>
   
           <div class="coreDivs">
             <img class="coreImgs" src="{% static 'images/integrity.png' %}" alt="pywv positive young women voices core values">
             <h4><span>Integrity</span></h4>
-            <h4>
-              We uphold honesty, professionalism and trust in all our endeavours and are committed to ensure that our choices and decisions are to the best interest of PYWV and stakeholders.</h4>
+            <p>
+              We uphold honesty, professionalism and trust in all our endeavours and are committed to ensure that our choices and decisions are to the best interest of PYWV and stakeholders.</p>
           </div>
   
           <div class="coreDivs">
             <img class="coreImgs" src="{% static 'images/inclusivity.png' %}" alt="pywv positive young women voices core values">
             <h4><span>Inclusivity</span></h4>
-            <h4>
-              We are committed to treat everyone with fairness and equality regardless of their gender, sexuality, religion, social class and beliefs.</h4>
+            <p>
+              We are committed to treat everyone with fairness and equality regardless of their gender, sexuality, religion, social class and beliefs.</p>
           </div>
   
           <div class="coreDivs">
             <img class="coreImgs" src="{% static 'images/humanity.png' %}" alt="pywv positive young women voices core values">
             <h4><span>Humanity</span></h4>
-            <h4>
-              We treat everyone we interact with with dignity, kindness and embrace their value simply because they are human.</h4>
+            <p>
+              We treat everyone we interact with with dignity, kindness and embrace their value simply because they are human.</p>
           </div>
 
           <div class="coreDivs transparencyformobile">
             <img class="coreImgs" src="{% static 'images/transparency.webp' %}" alt="pywv positive young women voices core values">
             <h4><span>Transparency</span></h4>
-            <h4>
+            <p>
               We are accountable to our stakeholders by ensuring openness in our communication, being good stewards of resources entrusted to us and being responsible for our actions
+            </p>
           </div>
-          </h4>
+          
         </div>
       </div>
     </section>
@@ -148,9 +150,9 @@
         <a class="card-link" href="{% url 'article-details' post.pk %}">
           <div class="card">
             {%if post.header_image%}
-              <img style="width:340px;height:200px;" src="{{post.header_image.url}}" class="card-img-top" alt="...">
+              <img style="width:340px;height:200px;" src="{{post.header_image.url}}" class="cardImg" alt="...">
             {%else%}
-              <img style="width:340px;height:200px;" src="https://qawerk.com/wp-content/uploads/2021/07/no-image-available-icon-6.png" alt="">
+              <img style="width:340px;height:200px;" src="https://qawerk.com/wp-content/uploads/2021/07/no-image-available-icon-6.png"class="cardImg" alt="...">
             {%endif%}
 
             <div class="card-body">

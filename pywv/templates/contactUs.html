@@ -1,6 +1,7 @@
 {%extends 'base.html'%} 
-{% load static %}
+{%load static%}
 {%block content%}
+{%include 'head.html'%}
 
     <title>{%block title%}Contact us || Positive young women voices {%endblock%}</title>   
 
@@ -137,9 +138,33 @@
           </form>
         </div>
       </div>
+
+      {%endif%}
       
     </section>
 
-    {%endif%}
+    
+
+      <div style="display:none ;" class="slider">
+        <ul>
+          <li class="image3Li">
+            <div class="center-y">
+            </div>
+          </li>
+        </ul>
+
+        <ul>
+          <nav>
+            <a href="#"></a>
+          </nav>
+        </ul>
+      </div>
+
+
+ 
+
+
+ 
+  
 
 {%endblock%}

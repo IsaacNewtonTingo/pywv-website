@@ -2,23 +2,31 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
-    <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
-    {%block style_base%}
+   
+      <meta charset="UTF-8">
+      <meta http-equiv="X-UA-Compatible" content="IE=edge">
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+
     <link rel="stylesheet" href="{% static 'css/mainStyles.css' %}" />
-    {%endblock%}
     <title>{%block title%} PYWV {%endblock%}</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"/>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/waypoints/4.0.1/jquery.waypoints.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Counter-Up/1.0.0/jquery.counterup.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/animejs/2.0.2/anime.min.js"></script>
     <link rel="icon" type="image/x-icon" href="https://i0.wp.com/positiveyoungwomenvoices.org/wp-content/uploads/2017/09/db6b4b16-3466-4d83-b0da-febb3e5b7a832.png?fit=200%2C200&ssl=1">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <script src="https://kit.fontawesome.com/c8e139d437.js" crossorigin="anonymous"></script>
 
     <link
-      href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css"
-      rel="stylesheet"
-      integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor"
-      crossorigin="anonymous"
-    />
+    href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css"
+    rel="stylesheet"
+    integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor"
+    crossorigin="anonymous"
+  />
 
-    <script src="https://kit.fontawesome.com/c8e139d437.js" crossorigin="anonymous"></script>
   </head>
 
   <body>
@@ -79,7 +87,7 @@
         </nav>
         
         <div class="socials">
-            <button class="donateBTN"> <a style="font-size:12px ;color:white ;" href="{%url 'Donate'%}" >Donate</a> </button>
+            <button onclick="goToDonatePage()" class="donateBTN">Donate</a> </button>
             <a href="https://www.instagram.com/pywv2017/" target="_blank">
               <img
                 src="{%static 'images/Instagram-logo-free-download-PNG.png' %}"
@@ -109,6 +117,7 @@
             src="https://i0.wp.com/positiveyoungwomenvoices.org/wp-content/uploads/2017/09/db6b4b16-3466-4d83-b0da-febb3e5b7a832.png?fit=200%2C200&ssl=1"
             alt="Positive young women voices"
           />
+          <!-- <div class="word"></div> -->
          
           <i style="font-size:36px" onclick="toggleMenu()" class="fa-solid fa-bars"></i>
         </div>
@@ -122,17 +131,17 @@
                 <a class="nav-link dropdown-toggle" href="#" id="navbarLightDropdownMenuLink" role="button" data-bs-toggle="dropdown" aria-expanded="false">
                   About us
                 </a>
-                <ul class="dropdown-menu dropdown-menu-light" aria-labelledby="navbarLightDropdownMenuLink">
+                <ul class="dropdown-menu mobileDrop dropdown-menu-light" aria-labelledby="navbarLightDropdownMenuLink">
                   <li><a class="dropdown-item" href="{%url 'aboutUs'%}">Our why</a></li>
                   <li><a class="dropdown-item" href="{%url 'theTeam'%}">The team</a></li>
                 </ul>
               </li>
     
               <li class="nav-item dropdown">
-                <a class="nav-link dropdown-toggle" href="#" id="navbarDarkDropdownMenuLink" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                <a class="nav-link dropdown-toggle " href="#" id="navbarDarkDropdownMenuLink" role="button" data-bs-toggle="dropdown" aria-expanded="false">
                   Our work
                 </a>
-                <ul class="dropdown-menu dropdown-menu-light" aria-labelledby="navbarDarkDropdownMenuLink">
+                <ul class="dropdown-menu mobileDrop dropdown-menu-light" aria-labelledby="navbarDarkDropdownMenuLink">
                   <li><a href="{%url 'Healthcare'%}"
                     >Access to Inclusive Healthcare</a></li>
                   <li><a href="{%url 'Rights'%}"
@@ -150,7 +159,7 @@
             </ul>
           </nav>
     
-          <button class="donateBTN"> <a style="font-size:12px ;color:white ;" href="{%url 'Donate'%}">Donate</a> </button>
+          <button onclick="goToDonatePage()" class="donateBTN">Donate</button>
     
          
         </div>
@@ -159,10 +168,25 @@
     </header>
 
     
-    <div >
+  
       {%block content%}
       {%endblock%}
-    </div>
+
+      <div style="display:none ;" class="slider">
+        <ul>
+          <li class="image3Li">
+            <div class="center-y">
+            </div>
+          </li>
+        </ul>
+
+        <ul>
+          <nav>
+            <a href="#"></a>
+          </nav>
+        </ul>
+      </div>
+
 
     <footer>
       <div class="footerDiv" > 
@@ -369,6 +393,10 @@
         window.location.href = "{%url 'prevention-and-ending-violence-against-women-and-girls'%}";
       }
 
+      function goToDonatePage() {
+        window.location.href = "{%url 'Donate'%}";
+      }
+
       function goToGenderRights() {
         window.location.href = "{%url 'gender-rights-promotion'%}";
       }
@@ -469,70 +497,6 @@
         // replace the element's html with our dynamically created html
         el.innerHTML = textCode.join(" ");
       });
-
-      //scroll effects................................
-
-      const scrollElements = document.querySelectorAll(".js-scroll");
-
-      const elementInView = (el, dividend = 1) => {
-        const elementTop = el.getBoundingClientRect().top;
-
-        return (
-          elementTop <=
-          (window.innerHeight || document.documentElement.clientHeight) /
-            dividend
-        );
-      };
-
-      const elementOutofView = (el) => {
-        const elementTop = el.getBoundingClientRect().top;
-
-        return (
-          elementTop >
-          (window.innerHeight || document.documentElement.clientHeight)
-        );
-      };
-
-      const displayScrollElement = (element) => {
-        element.classList.add("scrolled");
-      };
-
-      const hideScrollElement = (element) => {
-        element.classList.remove("scrolled");
-      };
-
-      const handleScrollAnimation = () => {
-        scrollElements.forEach((el) => {
-          if (elementInView(el, 1.25)) {
-            displayScrollElement(el);
-          } else if (elementOutofView(el)) {
-            hideScrollElement(el);
-          }
-        });
-      };
-
-      window.addEventListener("scroll", () => {
-        handleScrollAnimation();
-      });
-
-
-
-      //-------------------Read more our why----------------
-
-      function readMore() {
-        var moreText = document.getElementById("more");
-        var btnText = document.getElementById("myBtn");
-      
-        if (btnText.style.display === "none") {
-         
-          btnText.style.display= "none"; 
-          moreText.style.display = "inline";
-        } else {
-          btnText.style.display= "inline"; 
-          moreText.style.display = "none";
-        }
-      }
-
 
 //-----------------Header name animation---------------------------
 

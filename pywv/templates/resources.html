@@ -1,6 +1,8 @@
 {%extends 'base.html'%} 
 {% load static %}
 {%block content%}
+{%include 'head.html'%}
+
 
     <title>{%block title%} Resources || pywv || Positive young women voices {%endblock%}</title>
 
@@ -12,7 +14,7 @@
 
       <div class="healthcareItems resourcesDiv">
         <div onclick="goToFlourish()" class="didi">
-          <img src="{%static 'images/darkPad.png' %}"/>
+          <img src="{%static 'images/resource1.png' %}"/>
           <h3>Flourish Toolbox</h3>
 
           <p>
@@ -26,7 +28,7 @@
         </div>
 
         <div onclick="goToStrategicPlan()" class="didi">
-          <img src="{%static 'images/hiv.png' %}"/>
+          <img src="{%static 'images/resource2.png' %}"/>
           <h3>PYWV 2022 - 2026 Strategic Plan</h3>
 
           <p>

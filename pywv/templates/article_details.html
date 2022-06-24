@@ -1,11 +1,14 @@
 {% extends 'base.html' %} 
 {%load static%}
 {% block content%}
+{%include 'head.html'%}
+
  
   <title>{%block title%} {{post.title_tag}} {%endblock%}</title>
 
   <section class="aticleDetailSection">
-      <h1 class="postDetailTitle">{{post.title}}</h1>
+    <div class="articleContainer">
+ <h1 class="postDetailTitle">{{post.title}}</h1>
       <br>
       <small >By:{{post.author.first_name}} {{post.author.last_name}} <span style="color:gray ;"> {{post.date_created}} </span>  </small>
 
@@ -26,7 +29,7 @@
 <br><br>
  <p> {{post.body|safe}}</p>
 
-
+<br><br><br>
   <hr>
 
   <!-- <div class="card mb-3" style="max-width: 540px;">
@@ -70,39 +73,9 @@
   <br>
   <br>
   <br>
-
-  <div class="commentsContainer">
-    <h2>Comments :</h2>
-  
-  
-    {%if not post.comments.all%}
-    
-    <a href="{%url 'add_comment' post.pk%}">Add comment</a> <br><br>
-  
-    {%else%}
-  
-    <a href="{%url 'add_comment' post.pk%}">Add comment</a> <br><br>
-  
-  
-    {%for comment in post.comments.all%}
-  
-    <div class="commentMiniContainer">
-      <strong>
-        {{comment.name}}
-      </strong> <br>
-      <small style="color: gray;">
-        {{comment.date_added}}
-      </small> 
-  
-      <br>
-      <br>
-      <p>{{comment.body}}</p> 
     </div>
-  
-    {%endfor%}
-  
-    {%endif%} 
-  </div>
+     
+
 
   </section>
 
