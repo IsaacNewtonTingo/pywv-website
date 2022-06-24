@@ -28,14 +28,14 @@ load_dotenv()
 SECRET_KEY =os.getenv("SECRET_KEY")
 
 # SECURITY WARNING: don't run with debug turned on in production!
-# if os.getcwd() == '/app':
-#     SECURE_PROXY_SSL__HEADER = ('HTTP_X_FORWARDED_PROTO', 'https')
-#     SECURE_SSL_REDIRECT = True
-#     DEBUG = False
-# else:
-#     DEBUG = True
+if os.getcwd() == '/app':
+    SECURE_PROXY_SSL__HEADER = ('HTTP_X_FORWARDED_PROTO', 'https')
+    SECURE_SSL_REDIRECT = True
+    DEBUG = False
+else:
+    DEBUG = True
 
-DEBUG = True
+
 
 ALLOWED_HOSTS = ['*']
 
