@@ -474,16 +474,16 @@ header{
   background-color: #000;
 }
 .image1Li{
-  background:url(../images/d11.JPG);
+  background:url(../images/d11.jpg);
   filter: brightness(70%) contrast(1.2);
 }
 .image2Li{
-  background:url(../images/d12.JPG);
+  background:url(../images/d12.jpg);
   filter: brightness(70%) contrast(1.2);
 
 }
 .image3Li{
-  background:url(../images/d13.JPG);
+  background:url(../images/d13.jpg);
   filter: brightness(70%) contrast(1.2);
 
 }
