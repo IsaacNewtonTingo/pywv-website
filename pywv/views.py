@@ -1,12 +1,14 @@
 from django.conf import settings
 from django.http import HttpResponseRedirect
-from django.shortcuts import get_object_or_404, render
+from django.shortcuts import get_object_or_404, render,redirect
 from django.urls import reverse_lazy,reverse
 from django.views.generic import ListView,DetailView,CreateView, UpdateView, DeleteView
 from .models import  Post,Comment
 from .forms import PostForm,CommentForm
 from django.core.mail import send_mail
 from django.conf import settings
+from django.contrib.auth import authenticate, login, logout
+from django.contrib import messages
 
 
 class HomeView(ListView):
@@ -17,7 +19,31 @@ class HomeView(ListView):
     def get_context_data(self,*args, **kwargs):
         context=super(HomeView,self).get_context_data(*args, **kwargs)
         return context
+
+def signIn(request):
+    if request.method == 'POST':
+        username = request.POST['username']
+        pass1 = request.POST['pass1']
+
+        user = authenticate(username=username, password=pass1)
+
+        if user is not None:
+            login(request, user)
+            messages.info(request, "Successfully logged in")
+            return redirect("home")
+        else:
+            messages.error(request, "Wrong credentials")
+            return redirect("signIn")
+    else:
+        return render(request, "login.html")
    
+def signout(request):
+    logout(request)
+    messages.success(request, "Logged Out Successfully")
+    return redirect('home')
+
+  
+    
 class ArticleDetailView(DetailView):
     model=Post
     template_name= 'article_details.html'

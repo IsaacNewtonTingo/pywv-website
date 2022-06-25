@@ -238,6 +238,13 @@
           <h6><a href="{%url 'flourish'%}">Flourish toolbox</a></h6>
           <h6><a href="{%url 'pywv2022_2026StrategicPlan'%}">PYWV 2022-2026 strategic plan</a></h6>
           <h6><a href="{%url 'contactUs'%}">Contact us</a></h6>
+          {%if user.is_authenticated%}
+          <a href="{%url 'add-post'%}">Create post</a></h6>
+          <h6  ><a href="{%url 'signOut'%}">Logout</a></h6>
+          {% else %}
+          <h6 class="loginLink" ><a href="{%url 'signIn'%}">Login</a></h6>
+          {% endif %}
+
         </div>
 
       </div>
@@ -265,6 +272,12 @@
 
 
     <script>
+      const alert=document.getElementById('alert')
+      setTimeout(()=>{
+          alert.classList.add('d-none')
+      },2000)
+
+
       //-------------Counter------------------------
 
         $(document).ready(function(){

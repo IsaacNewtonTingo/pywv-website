@@ -1,6 +1,7 @@
 from django.urls import path
 from .views import  AddPostView,AddCommentView, AllPosts, DeletePostView, HomeView,ArticleDetailView, UpdatePostView
 from . import views
+from django.contrib.auth import views as auth_views
 #from django import views
 
 urlpatterns = [
@@ -21,6 +22,8 @@ urlpatterns = [
    
    
     path('', views.Home, name="home"),
+    path('signIn', views.signIn, name="signIn"),
+    path('signOut', views.signout, name="signOut"),
     path('contactUs', views.ContactUs, name="contactUs"),
     path('aboutUs', views.AboutUs, name="aboutUs"),
     path('adoptAGirlsMonth', views.AdoptAGirlsMonth, name="adoptAGirlsMonth"),
