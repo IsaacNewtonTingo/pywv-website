@@ -180,6 +180,7 @@ body {
 .valueItemContainer {
   display: flex;
   justify-content: space-between;
+  
 }
 .coreDivs{
   width: 20%;
@@ -450,6 +451,8 @@ header{
 	position: relative;
 	width: 100%;
 	height: 90vh;
+  margin-bottom: 20px;
+  overflow: hidden;
 }
 
 .slider {
@@ -495,9 +498,6 @@ header{
   height: 100%;
   align-items: center;
   justify-content: center;
-
-
-
 }
 
 
@@ -512,7 +512,7 @@ header{
   text-shadow: #000 1px 1px 1px;
   height: 100%;
   padding: 50% 40px;
-  border-radius: 0 500px 0 0;
+  border-radius: 0 300px 0 0;
 
   background: linear-gradient(130deg, rgb(255, 115, 0, 0.8), rgb(180, 180, 180, 0.8), rgba(255, 0, 128, 0.8));
   background-size: 200% 200%;
@@ -521,12 +521,7 @@ header{
   animation: GradientAnimation 4s ease infinite;
 
 }
-/* .center-y h3 + a {
-	font-size: 1.6rem;
-	display: inline-block;
-	color: #fff;
-	margin-top: 2rem;
-} */
+
 .center-y h3, h3 + a {
 	opacity: 0;
 	transition: opacity .7s 0s, transform .5s .2s;
@@ -575,103 +570,94 @@ li.prev {
 
 
 
+@-webkit-keyframes scrollThumbnail {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(calc(-250px * 7));
+  }
+}
 
-
-
-
-
-
-
-
-
-
-
+@keyframes scrollThumbnail {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(calc(-250px * 7));
+  }
+}
 
 #slideshow {
 	margin: 0 auto;
-	height: 450px;
 	width: 100%;
 	background-color: #222222;
 	box-sizing: border-box;
-  padding: 40px 0 0 0;
+  padding: 60px ;
+
+}
+.partnersText{
+  color: white;
+  margin-bottom: 60px;
+}
+.slide img{
+  width: 130px;
+  height: 100px;
+  margin-right: 60px;
 }
 
-.entire-content {
-	margin: auto;
-	width: 190px;
-	perspective: 1000px;
-	position: relative;
-	padding-top: 80px;
+.thumbnailSlider {
+  overflow: hidden;
+  position: relative;
+  width: 100%;
+  display: flex ;
+  align-items: center;
+  justify-content: center;
+}
+.thumbnailSlider::before, .thumbnailSlider::after {
+
+  content: "";
+  height: 100px;
+  position: absolute;
+  width: 200px;
+  z-index: 2;
+}
+.thumbnailSlider::after {
+  right: 0;
+  top: 0;
+  transform: rotateZ(180deg);
+}
+.thumbnailSlider::before {
+  left: 0;
+  top: 0;
+}
+.thumbnailSlider .slide-track {
+  -webkit-animation: scrollThumbnail 40s linear infinite;
+          animation: scrollThumbnail 40s linear infinite;
+  display: flex;
+  width: calc(250px * 14);
+
+}
+.thumbnailSlider .slide {
+  height: 100px;
+  width: 250px;
+}
+.slide-track{
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
-.content-carrousel {
-	width: 100%;
-	position: absolute;
-	float: right;
-	animation: rotar 15s infinite linear;
-	transform-style: preserve-3d;
-}
 
-.content-carrousel:hover {
-	animation-play-state: paused;
-	cursor: pointer;
-}
 
-.content-carrousel figure {
-	width: 100%;
-	height: 120px;
-	border: 1px solid #3b444b;
-	overflow: hidden;
-	position: absolute;
-}
 
-.content-carrousel figure:nth-child(1) {
-	transform: rotateY(0deg) translateZ(300px); 
-} .content-carrousel figure:nth-child(2) {
-	transform: rotateY(40deg) translateZ(300px); 
-} .content-carrousel figure:nth-child(3) {
-	transform: rotateY(80deg) translateZ(300px); 
-} .content-carrousel figure:nth-child(4) {
-	transform: rotateY(120deg) translateZ(300px); 
-} .content-carrousel figure:nth-child(5) {
-	transform: rotateY(160deg) translateZ(300px); 
-} .content-carrousel figure:nth-child(6) {
-	transform: rotateY(200deg) translateZ(300px); 
-} .content-carrousel figure:nth-child(7) {
-	transform: rotateY(240deg) translateZ(300px); 
-} .content-carrousel figure:nth-child(8) {
-	transform: rotateY(280deg) translateZ(300px); 
-} .content-carrousel figure:nth-child(9) {
-	transform: rotateY(320deg) translateZ(300px); 
-} .content-carrousel figure:nth-child(10) {
-	transform: rotateY(360deg) translateZ(300px); 
-} 
 
-.shadow {
-    position: absolute;
-    box-shadow: 0px 0px 20px 0px #000;
-    border-radius: 1px;
-}
 
-.content-carrousel img {
-	image-rendering: auto;
-	transition: all 300ms;
-	width: 100%;
-	height: 100%;
-}
 
-.content-carrousel img:hover {
-	transform: scale(1.2);
-	transition: all 300ms;
-}
 
-@keyframes rotar {
-	from {
-		transform: rotateY(0deg);
-	} to {
-		transform: rotateY(360deg);
-	}
-}
+
+
+
 
 
 
@@ -1944,6 +1930,439 @@ footer img {
 
 
 
+@media only screen and (max-width: 1080px) {
+  .reachUs{
+    padding: 20px;
+  }
+
+  .logoContainer {
+    height: 60px;
+    width: 100%;
+    border-radius: 60px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 20px 0 20px;
+
+    border:none;
+    border-radius:0;
+    background:none;
+  }
+  
+.logo {
+  width: 50px;
+  height: 50px;
+}
+  .headerDiv{
+    display: none;
+  }
+  .headerDivMobile li {
+    display: block;
+    margin-left: 20px;
+    margin-bottom: 20px;
+  }
+  .headerDivMobile a {
+    color: #00545f;
+    text-decoration: none;
+    font-weight: 900;
+    font-size: 20px;
+  }
+  .headerDivMobile{
+    display: block;
+    height: 100px;
+    background-color: rgb(255, 221, 235);
+    padding: 0px;
+    z-index: 1;
+    position: sticky;
+    top: 0;
+    border-bottom: #ffe0f9 solid 1px;
+    justify-content: center;
+  }
+  
+  .menuIcon{
+    display: block;
+    width: 50px;
+    height: 50px;
+    background-color: #000000;
+    border-radius: 50%;
+  }
+  .openListMobile{
+    background-color: rgb(245, 245, 245);
+    padding:40px 20px;
+    flex-direction: column;
+    border-bottom: #adadad solid 1px;
+    display: none;
+    margin-top: 10px;
+   width: 100%;
+  }
+  .mobileDrop{
+    width:300px;
+    
+  }
+.dropdown-menu a {
+  width: 100%;
+  font-size: 12px;
+}
+.recentPostsSection{
+  margin: 0px;
+  padding: 0px 40px;
+  display: flex;
+  background-image:none;
+  align-items: center;
+  justify-content: space-around;
+  flex-wrap: wrap;
+}
+
+.valueItemContainer {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+}
+.coreDivs{
+  width: 25%;
+}
+.numbersContainer :nth-child(3){
+  color: rgb(110, 110, 110);
+  font-weight: 900;
+  font-size: 18px;
+  text-align: center;
+  margin-top: 20px;
+}
+.numbersContainer{
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+.numbersContainer img{
+  width: 100px;
+  margin-bottom: 40px;
+}
+.stackblocksLetterSection{
+  padding: 0;
+}
+
+.blocks{
+  width: 50%;
+}
+
+.recentPostsSection{
+  padding: 20px;
+  justify-content: space-between;
+}
+.card{
+  margin: 0 0 20px 0;
+}
+.feedTexts{
+  margin: 40px 20px 20px 20px;
+}
+.partnersSection img{
+  width: 100px;
+}
+
+footer {
+  padding: 150px 40px 40px 40px;
+}
+.bottomMost h6{
+  font-size: 10px;
+}
+
+footer h2 {
+  color: #a0ffef;
+  margin-bottom: 10px;
+  margin-top: 20px;
+  font-size: 20px;
+}
+
+.footerDiv iframe{
+  width: 100%;
+  margin: 0;
+}
+.mensSection{
+  padding: 20px;
+}
+.healthcareItems {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+}
+.healthcareItems div{
+  margin-bottom: 20px;
+}
+.donateSection{
+  padding: 20px;
+}
+
+.intro {
+	position: relative;
+	width: 100%;
+	height: 90vh;
+}
+.center-y h3{
+  font-size: 30px;
+}
+
+.center-y span{
+  font-size: 30px;
+}
+.slider nav a {
+	display: inline-block;
+	border-radius: 50%;
+	width: 0.5rem;
+	height: 0.5rem;
+  min-width: 8px;
+  min-height: 8px;
+	background: #fff;
+	margin: 0 1rem;
+  transition: transform .3s;
+}
+.valueItemContainer {
+  display: flex;
+  justify-content: space-around;
+  flex-wrap: wrap;
+}
+.healthcareItems div {
+  width: 400px;
+}
+
+} 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+@media only screen and (max-width: 820px) {
+  .reachUs{
+    padding: 20px;
+  }
+
+  .logoContainer {
+    height: 60px;
+    width: 100%;
+    border-radius: 60px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 20px 0 20px;
+
+    border:none;
+    border-radius:0;
+    background:none;
+  }
+  
+.logo {
+  width: 50px;
+  height: 50px;
+}
+  .headerDiv{
+    display: none;
+  }
+  .headerDivMobile li {
+    display: block;
+    margin-left: 20px;
+    margin-bottom: 20px;
+  }
+  .headerDivMobile a {
+    color: #00545f;
+    text-decoration: none;
+    font-weight: 900;
+    font-size: 20px;
+  }
+  .headerDivMobile{
+    display: block;
+    height: 100px;
+    background-color: rgb(255, 221, 235);
+    padding: 0px;
+    z-index: 1;
+    position: sticky;
+    top: 0;
+    border-bottom: #ffe0f9 solid 1px;
+    justify-content: center;
+  }
+  
+  .menuIcon{
+    display: block;
+    width: 50px;
+    height: 50px;
+    background-color: #000000;
+    border-radius: 50%;
+  }
+  .openListMobile{
+    background-color: rgb(245, 245, 245);
+    padding:40px 20px;
+    flex-direction: column;
+    border-bottom: #adadad solid 1px;
+    display: none;
+    margin-top: 10px;
+   width: 100%;
+  }
+  .mobileDrop{
+    width:300px;
+    
+  }
+.dropdown-menu a {
+  width: 100%;
+  font-size: 12px;
+}
+.recentPostsSection{
+  margin: 0px;
+  padding: 0px;
+  display: flex;
+  background-image:none;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-around;
+  flex-wrap: wrap;
+}
+
+.valueItemContainer {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+}
+.coreDivs{
+  width: 25%;
+}
+.numbersContainer :nth-child(3){
+  color: rgb(110, 110, 110);
+  font-weight: 900;
+  font-size: 18px;
+  text-align: center;
+  margin-top: 20px;
+}
+.numbersContainer{
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+.numbersContainer img{
+  width: 100px;
+  margin-bottom: 40px;
+}
+.stackblocksLetterSection{
+  padding: 0;
+}
+.letterAndTweets{
+  flex-direction: column;
+}
+.blocks{
+  width: 100%;
+}
+.twee{
+  display: none;
+}
+.recentPostsSection{
+  padding: 20px;
+  justify-content: space-between;
+}
+.card{
+  margin: 0 0 20px 0;
+}
+.feedTexts{
+  margin: 40px 20px 20px 20px;
+}
+.partnersSection img{
+  width: 100px;
+}
+
+footer {
+  padding: 150px 40px 40px 40px;
+}
+.bottomMost h6{
+  font-size: 10px;
+}
+.footerDiv{
+  display: flex;
+  margin-bottom: 40px;
+  flex-wrap: wrap;
+  align-items: flex-start;
+  flex-direction: row;
+  
+}
+footer h2 {
+  color: #a0ffef;
+  margin-bottom: 10px;
+  margin-top: 20px;
+  font-size: 20px;
+}
+.footerDiv div{
+  margin-left: 40px;
+}
+.footerDiv iframe{
+  width: 100%;
+  margin: 0;
+}
+.mensSection{
+  padding: 20px;
+}
+.healthcareItems {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+}
+.healthcareItems div{
+  margin-bottom: 20px;
+}
+.donateSection{
+  padding: 20px;
+}
+.tweeOnMobile{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 40px;
+}
+.intro {
+	position: relative;
+	width: 100%;
+	height: 90vh;
+}
+.center-y h3{
+  font-size: 30px;
+}
+
+.center-y span{
+  font-size: 30px;
+}
+.slider nav a {
+	display: inline-block;
+	border-radius: 50%;
+	width: 0.5rem;
+	height: 0.5rem;
+  min-width: 8px;
+  min-height: 8px;
+	background: #fff;
+	margin: 0 1rem;
+  transition: transform .3s;
+}
+.valueItemContainer {
+  display: flex;
+  justify-content: space-around;
+  flex-wrap: wrap;
+}
+.leftColored {
+  background-color: #444444;
+  width: 40%;
+  border-radius: 20px;
+}
+.formDiv {
+  width: 30%;
+}
+
+} 
+
 
 
 
@@ -1956,7 +2375,6 @@ footer img {
     display: none;
   }
   .intro {
-    position: relative;
     width: 100%;
     height: 50vh;
   }
@@ -1964,28 +2382,21 @@ footer img {
 		width: 100%;
 		height: 100%;
 	}
-  .slider nav a {
-    width: 10px;
-    height: 10px;
-    min-width: 12px;
-    min-height: 12px;
 
-  }
   .center-y span{
     font-size: 18px;
   }
   .center-y h3 {
     font-size: 16px;
     font-weight: 900;
-    padding: 20px;
+    padding: 90% 20px;
+    height: 100%;
   }
   .center-y {
-    display: flex;
-    flex-direction: column;
-    width: 70%;
-    position: absolute;
-    bottom: 50px;
-    left: 15%;
+    height: 90%;
+    width: 50%;
+    justify-content: flex-end;
+
   }
   .tweeOnMobile{
     display: flex;
@@ -2207,7 +2618,7 @@ footer img {
 .feedTexts{
   display:flex ;
   justify-content:space-between; 
-  margin:40px 20px 0 20px
+  margin:40px 20px 40px 20px
 }
 .feedTexts h1,h5{
   font-size: 20px;
@@ -2566,11 +2977,9 @@ footer form{
   flex-wrap: wrap;
 }
 .valueItemContainer {
-  display: flex;
-  justify-content: initial;
   flex-wrap: wrap;
   padding: 20px;
-  justify-content: space-around;
+
 
 }
 .coreDivs{
@@ -2778,170 +3187,18 @@ footer form{
   width: 100%;
  
 }
+.slide img{
+  width: 130px;
+  height: 70px;
+  margin-right: 0px;
+}
+#slideshow {
+	margin: 0 auto;
+	width: 100%;
+	background-color: #222222;
+	box-sizing: border-box;
+  padding: 20px ;
 
-
-}
-
-
-
-
-
-
-
-
-/* 
-@media only screen and (max-width: 768px) {
-  .logoContainer {
-    height: 60px;
-    width: 100%;
-    border-radius: 60px;
-    display: flex;
-    flex-direction: row;
-    justify-content: space-between;
-    align-items: center;
-    padding: 20px 20px 0 20px;
-  }
-  .reachUs{
-    padding: 20px;
-  }
-  
-.logo {
-  width: 50px;
-  height: 50px;
-}
-  .headerDiv{
-    display: none;
-  }
-  .headerDivMobile li {
-    display: block;
-    margin-left: 20px;
-    margin-bottom: 20px;
-  }
-  .headerDivMobile a {
-    color: #00545f;
-    text-decoration: none;
-    font-weight: 900;
-    font-size: 20px;
-  }
-  .headerDivMobile{
-    display: block;
-    height: 80px;
-    background-color: rgb(255, 221, 235);
-    padding: 0px;
-    z-index: 1;
-    position: sticky;
-    top: 0;
-    border-bottom: #ffe0f9 solid 1px;
-    justify-content: center;
-  }
-  
-  .menuIcon{
-    display: block;
-    width: 50px;
-    height: 50px;
-    background-color: #000000;
-    border-radius: 50%;
-  }
-  .openListMobile{
-    background-color: rgb(245, 245, 245);
-    padding: 40px;
-    flex-direction: column;
-    border-bottom: #adadad solid 1px;
-    display: none;
-    margin-top: 10px;
-   width: 100%;
-  }
-.dropdown-menu a {
-  width: 100%;
-  font-size: 12px;
-}
-.valueItemContainer {
-  display: flex;
-  justify-content: space-between;
-  flex-wrap: wrap;
-}
-.coreDivs{
-  width: 25%;
-}
-.numbersContainer :nth-child(3){
-  color: rgb(110, 110, 110);
-  font-weight: 900;
-  font-size: 18px;
-  text-align: center;
-  margin-top: 20px;
-}
-.numbersContainer{
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-}
-.numbersContainer img{
-  width: 100px;
-  margin-bottom: 40px;
-}
-.stackblocksLetterSection{
-  padding: 0;
-}
-.letterAndTweets{
-  flex-direction: column;
-}
-.blocks{
-  width: 100%;
-}
-.twee{
-  display: none;
-}
-.recentPostsSection{
-  padding: 20px;
-  justify-content: space-between;
-}
-.card{
-  margin: 0 0 20px 0;
-}
-.feedTexts{
-  margin: 40px 20px 20px 20px;
-}
-.partnersSection img{
-  width: 100px;
-}
-
-footer {
-  padding: 150px 40px 40px 40px;
-}
-.bottomMost h6{
-  font-size: 10px;
-}
-.footerDiv{
-  display: flex;
-  margin-bottom: 40px;
-  flex-wrap: wrap;
-  align-items: flex-start;
-  flex-direction: column-reverse;
-}
-footer h2 {
-  color: #a0ffef;
-  margin-bottom: 10px;
-  margin-top: 20px;
-  font-size: 20px;
-}
-
-.footerDiv iframe{
-  width: 100%;
-  margin: 0;
-}
-.mensSection{
-  padding: 20px;
-}
-.healthcareItems {
-  display: flex;
-  justify-content: space-between;
-  flex-wrap: wrap;
-}
-.healthcareItems div{
-  margin-bottom: 20px;
-}
-.donateSection{
-  padding: 20px;
 }
 
 
@@ -2951,11 +3208,18 @@ footer h2 {
 
 
 
-} */
 
 
 
 
+
+
+
+
+
+
+
+}
 
 
 
