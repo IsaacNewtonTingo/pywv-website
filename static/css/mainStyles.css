@@ -4,15 +4,7 @@ body {
   font-family: Georgia, "Times New Roman", Times, serif;
   background-color: rgb(255, 255, 255);
 }
-#preloader {
-  background: rgb(255, 255, 255) url(../images/preloader.gif) no-repeat center
-    center;
-  background-size: 30%;
-  height: 100vh;
-  width: 100%;
-  position: fixed;
-  z-index: 10000;
-}
+
 .logAndRunning {
   display: flex;
   flex-direction: row;

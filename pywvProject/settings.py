@@ -33,7 +33,7 @@ SECRET_KEY =os.getenv("SECRET_KEY")
 #     SECURE_SSL_REDIRECT = False
 #     DEBUG = False
 # else:
-DEBUG = True
+DEBUG = False
 
 
 
