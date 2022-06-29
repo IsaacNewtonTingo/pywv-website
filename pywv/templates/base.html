@@ -39,7 +39,7 @@
         <div class="logoContainer ">
           <img
             class="logo  "
-            src="../../static/images/pywvlogo.webp"
+            src="{%static 'images/logo.webp'%}"
             alt="Positive young women voices"
           />
 
@@ -112,12 +112,14 @@
 
       <div class="headerDivMobile">
         <div class="logoContainer">
-          <img
-            class="logo"
-            src="https://i0.wp.com/positiveyoungwomenvoices.org/wp-content/uploads/2017/09/db6b4b16-3466-4d83-b0da-febb3e5b7a832.png?fit=200%2C200&ssl=1"
-            alt="Positive young women voices"
-          />
-          <!-- <div class="word"></div> -->
+          <div class="logAndRunning">
+            <img
+              class="logo"
+              src="{%static 'images/logo.webp'%}"
+              alt="Positive young women voices"
+            />
+            <div class="word"></div>
+          </div>
          
           <i style="font-size:36px" onclick="toggleMenu()" class="fa-solid fa-bars"></i>
         </div>
