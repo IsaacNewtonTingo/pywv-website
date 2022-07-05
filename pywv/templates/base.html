@@ -38,12 +38,13 @@
       <div class="headerDiv">
         <div class="logoContainer ">
           <img
-            class="logo  "
+          id="square"
+            class="logo animated infinite wobble  "
             src="{%static 'images/logo.webp'%}"
             alt="Positive young women voices"
           />
 
-          <div class="word"></div>
+         
         </div>
   
         <nav>
@@ -114,11 +115,11 @@
         <div class="logoContainer">
           <div class="logAndRunning">
             <img
-              class="logo"
+              class="logo animated infinite wobble"
               src="{%static 'images/logo.webp'%}"
               alt="Positive young women voices"
             />
-            <div class="word"></div>
+           
           </div>
          
           <i style="font-size:36px" onclick="toggleMenu()" class="fa-solid fa-bars"></i>
@@ -192,9 +193,7 @@
 
     <footer>
       <div class="footerDiv" > 
-        <div>
-          <iframe src="https://positiveyoungwomenvoices.substack.com/embed" width="480" height="320" style="border:1px solid #EEE; background:white;" frameborder="0" scrolling="no"></iframe>
-        </div>
+        
 
         <div>
           <h2>Contact us</h2>
@@ -251,18 +250,7 @@
 
       </div>
 
-      <div class="bottomMost">
-        <hr class="footeLine" >
-  
-        <h6 class="designedBy" >
-          Designed and developed by
-          <a href="https://ape30tech.herokuapp.com/" target="_blank"
-            >Ape 30 technologies</a
-          >
-        </h6>
-  
-        <hr class="footeLine" >
-      </div>
+     
 
     </footer>
 
@@ -278,6 +266,28 @@
       setTimeout(()=>{
           alert.classList.add('d-none')
       },2000)
+
+      // Tip: avoid this ton of code using AniJS ;)
+
+var element = $('#square');
+
+// when mouseover execute the animation
+element.mouseover(function(){
+  
+  // the animation starts
+  element.toggleClass('wobble animated');
+  
+  // do something when animation ends
+  element.one('webkitAnimationEnd mozAnimationEnd MSAnimationEnd oanimationend animationend', function(e){
+   
+   // trick to execute the animation again
+    $(e.target).removeClass('wobble animated');
+  
+  });
+  
+});
+
+
 
 
       //-------------Counter------------------------
